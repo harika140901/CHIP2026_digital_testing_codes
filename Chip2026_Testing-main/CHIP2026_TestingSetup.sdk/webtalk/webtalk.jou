@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Webtalk v2018.3 (64-bit)
+# SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+# 
+# Start of session at: Sat Aug 15 15:33:37 2026
+# Process ID: 26840
+# Current directory: D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.sdk/webtalk
+# Command line: wbtcv.exe -mode batch -source sdk_webtalk.tcl
+# Log file: D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.sdk/webtalk/webtalk.log
+# Journal file: D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.sdk/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl

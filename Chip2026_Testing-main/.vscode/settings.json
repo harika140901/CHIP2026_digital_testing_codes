@@ -1,0 +1,10 @@
+{
+    "**/.Xil": true,
+    "**/*.runs": true,
+    "**/*.ip_user_files": true,
+    "**/*.sim": true,
+    "**/*.hw": true,
+    "**/obj": true,
+
+    "C_Cpp.errorSquiggles": "disabled"
+}

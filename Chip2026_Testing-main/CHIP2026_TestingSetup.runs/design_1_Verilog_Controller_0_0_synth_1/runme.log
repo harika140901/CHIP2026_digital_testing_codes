@@ -1,0 +1,684 @@
+
+*** Running vivado
+    with args -log design_1_Verilog_Controller_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_Verilog_Controller_0_0.tcl
+
+
+****** Vivado v2018.3 (64-bit)
+  **** SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
+  **** IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+source design_1_Verilog_Controller_0_0.tcl -notrace
+Command: synth_design -top design_1_Verilog_Controller_0_0 -part xc7z020clg484-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 22512 
+WARNING: [Synth 8-976] FAST_IMC_DONE has already been declared [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Verilog_Controller.v:302]
+WARNING: [Synth 8-2654] second declaration of FAST_IMC_DONE ignored [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Verilog_Controller.v:302]
+INFO: [Synth 8-994] FAST_IMC_DONE is declared here [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Verilog_Controller.v:302]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:01 . Memory (MB): peak = 385.730 ; gain = 116.949
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_Verilog_Controller_0_0' [d:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0/synth/design_1_Verilog_Controller_0_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'Verilog_Controller' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Verilog_Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'dma_recv_data' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:1]
+	Parameter BUFF_SIZE bound to: 1184 - type: integer 
+	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
+WARNING: [Synth 8-6014] Unused sequential element recv_len_reg was removed.  [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:28]
+INFO: [Synth 8-6155] done synthesizing module 'dma_recv_data' (1#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dma_send_data' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_send_data.v:1]
+	Parameter BUFF_SIZE bound to: 1184 - type: integer 
+	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dma_send_data' (2#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_send_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dma_send_data__parameterized0' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_send_data.v:1]
+	Parameter BUFF_SIZE bound to: 3616 - type: integer 
+	Parameter MAX_ITER_BITS bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dma_send_data__parameterized0' (2#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_send_data.v:1]
+INFO: [Synth 8-6157] synthesizing module 'scan_in_verilog' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_in_verilog.v:2]
+INFO: [Synth 8-6155] done synthesizing module 'scan_in_verilog' (3#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_in_verilog.v:2]
+INFO: [Synth 8-6157] synthesizing module 'scan_out_verilog' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'scan_out_verilog' (4#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:1]
+INFO: [Synth 8-6157] synthesizing module 'TOPS_BLOCK' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/TOPS_BLOCK.v:11]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/TOPS_BLOCK.v:32]
+INFO: [Synth 8-6155] done synthesizing module 'TOPS_BLOCK' (5#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/TOPS_BLOCK.v:11]
+INFO: [Synth 8-6157] synthesizing module 'Write_SRAM_WL' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Write_SRAM_WL.v:1]
+	Parameter N_CYCLES bound to: 8'b00000001 
+	Parameter IDLE bound to: 3'b000 
+	Parameter WRITE_EN_ON bound to: 3'b001 
+	Parameter WL_EN_ON bound to: 3'b010 
+	Parameter WL_EN_OFF bound to: 3'b011 
+	Parameter WRITE_EN_OFF bound to: 3'b100 
+	Parameter FINISH bound to: 3'b101 
+INFO: [Synth 8-6155] done synthesizing module 'Write_SRAM_WL' (6#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Write_SRAM_WL.v:1]
+INFO: [Synth 8-6157] synthesizing module 'IMC_ScanOut' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/IMC_ScanOut.v:23]
+	Parameter N_bits bound to: 900 - type: integer 
+	Parameter Ncycles bound to: 1 - type: integer 
+	Parameter ST_IDLE bound to: 4'b0000 
+	Parameter ST_SET_SCNID bound to: 4'b0001 
+	Parameter ST_SET_BANK bound to: 4'b0010 
+	Parameter ST_BANK_EN bound to: 4'b0011 
+	Parameter ST_IMC_START bound to: 4'b0100 
+	Parameter ST_IMC_WAIT bound to: 4'b0101 
+	Parameter ST_IN_EN_ON bound to: 4'b0110 
+	Parameter ST_CLK_A_HI bound to: 4'b0111 
+	Parameter ST_CLK_A_LO bound to: 4'b1000 
+	Parameter ST_IN_EN_OFF bound to: 4'b1001 
+	Parameter ST_SCAN_OUT bound to: 4'b1010 
+	Parameter ST_NEXT bound to: 4'b1011 
+	Parameter ST_DONE bound to: 4'b1100 
+INFO: [Synth 8-6157] synthesizing module 'IMC_Wrapper' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/IMC_Wrapper.v:3]
+	Parameter IDLE bound to: 4'b0000 
+	Parameter TDC_RESET_ON bound to: 4'b0001 
+	Parameter TDC_RESET_OFF bound to: 4'b0010 
+	Parameter VDAC_ON bound to: 4'b0011 
+	Parameter CAP_RESET_ON bound to: 4'b0100 
+	Parameter CHARGE_ON bound to: 4'b0101 
+	Parameter VTC_TDC_ON bound to: 4'b0110 
+	Parameter TDC_EN_OFF bound to: 4'b0111 
+	Parameter TDC_COMPUTE_ON bound to: 4'b1000 
+	Parameter COMPUTE_VDAC_OFF bound to: 4'b1001 
+	Parameter CHARGE_OFF bound to: 4'b1010 
+	Parameter CAP_RESET_OFF bound to: 4'b1011 
+	Parameter DONE bound to: 4'b1100 
+INFO: [Synth 8-6155] done synthesizing module 'IMC_Wrapper' (7#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/IMC_Wrapper.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'IMC_ScanOut' (8#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/IMC_ScanOut.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Verilog_Controller' (9#1) [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/Verilog_Controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_Verilog_Controller_0_0' (10#1) [d:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/bd/design_1/ip/design_1_Verilog_Controller_0_0/synth/design_1_Verilog_Controller_0_0.v:58]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:02 . Memory (MB): peak = 435.316 ; gain = 166.535
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 435.316 ; gain = 166.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:02 . Memory (MB): peak = 435.316 ; gain = 166.535
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 834.445 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 834.445 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.095 . Memory (MB): peak = 841.004 ; gain = 6.559
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 841.004 ; gain = 572.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 841.004 ; gain = 572.223
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 841.004 ; gain = 572.223
+---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'phase_reg' in module 'scan_in_verilog'
+INFO: [Synth 8-5544] ROM "CLK_B" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CLK_A" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "SCAN_IN" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'phase_reg' in module 'scan_out_verilog'
+INFO: [Synth 8-5544] ROM "CLK_B" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CLK_A" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'TOPS_BLOCK'
+INFO: [Synth 8-5544] ROM "DFF_RST" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'Write_SRAM_WL'
+INFO: [Synth 8-5546] ROM "state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "done" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WL_EN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "WRITE_EN" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'IMC_Wrapper'
+INFO: [Synth 8-5544] ROM "FSM_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "IMC_DONE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "VTC_EN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TDC_RST" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TDC_COMPUTE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "TDC_EN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "VDAC_CTRL" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "RST_CAP" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CHG_EN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "FSM_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+INFO: [Synth 8-802] inferred FSM for state register 'FSM_state_reg' in module 'IMC_ScanOut'
+INFO: [Synth 8-5544] ROM "out_buf_reg[3]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "out_buf_reg[2]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "out_buf_reg[1]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "out_buf_reg[0]" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "FSM_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5544] ROM "SCAN_IN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "bank_cnt" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "DONE" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "BANK_SEL" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "CLK_A_load" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "IN_EN" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "FSM_state" won't be mapped to Block RAM because address size (1) smaller than threshold (5)
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'phase_reg' using encoding 'sequential' in module 'scan_in_verilog'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 iSTATE1 |                               00 |                               00
+                  iSTATE |                               01 |                               01
+                 iSTATE0 |                               10 |                               10
+                 iSTATE2 |                               11 |                               11
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'phase_reg' using encoding 'sequential' in module 'scan_out_verilog'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                  iSTATE |                               00 |                               00
+                 iSTATE0 |                               01 |                               01
+                 iSTATE1 |                               10 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'TOPS_BLOCK'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                           000001 |                              000
+             WRITE_EN_ON |                           000010 |                              001
+                WL_EN_ON |                           000100 |                              010
+               WL_EN_OFF |                           001000 |                              011
+            WRITE_EN_OFF |                           010000 |                              100
+                  FINISH |                           100000 |                              101
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'Write_SRAM_WL'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                             0000 |                             0000
+            TDC_RESET_ON |                             0001 |                             0001
+           TDC_RESET_OFF |                             0010 |                             0010
+                 VDAC_ON |                             0011 |                             0011
+            CAP_RESET_ON |                             0100 |                             0100
+               CHARGE_ON |                             0101 |                             0101
+              VTC_TDC_ON |                             0110 |                             0110
+              TDC_EN_OFF |                             0111 |                             0111
+          TDC_COMPUTE_ON |                             1000 |                             1000
+        COMPUTE_VDAC_OFF |                             1001 |                             1001
+              CHARGE_OFF |                             1010 |                             1010
+           CAP_RESET_OFF |                             1011 |                             1011
+                    DONE |                             1100 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'IMC_Wrapper'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                 ST_IDLE |                             0000 |                             0000
+            ST_SET_SCNID |                             0001 |                             0001
+             ST_SET_BANK |                             0010 |                             0010
+              ST_BANK_EN |                             0011 |                             0011
+            ST_IMC_START |                             0100 |                             0100
+             ST_IMC_WAIT |                             0101 |                             0101
+             ST_IN_EN_ON |                             0110 |                             0110
+             ST_CLK_A_HI |                             0111 |                             0111
+             ST_CLK_A_LO |                             1000 |                             1000
+            ST_IN_EN_OFF |                             1001 |                             1001
+             ST_SCAN_OUT |                             1010 |                             1010
+                 ST_NEXT |                             1011 |                             1011
+                 ST_DONE |                             1100 |                             1100
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'FSM_state_reg' using encoding 'sequential' in module 'IMC_ScanOut'
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 841.004 ; gain = 572.223
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |Verilog_Controller__GB0 |           1|     37159|
+|2     |Verilog_Controller__GB1 |           1|     21733|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:35]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:50]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:50]
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 5     
+	   2 Input     11 Bit       Adders := 3     
+	   2 Input      9 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 10    
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 2     
++---Registers : 
+	             1184 Bit    Registers := 3     
+	              900 Bit    Registers := 4     
+	               32 Bit    Registers := 2     
+	               11 Bit    Registers := 3     
+	                8 Bit    Registers := 10    
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 47    
++---Muxes : 
+	   2 Input   1184 Bit        Muxes := 7     
+	   4 Input   1184 Bit        Muxes := 2     
+	   2 Input     32 Bit        Muxes := 3     
+	   2 Input     11 Bit        Muxes := 1     
+	  11 Input     11 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 6     
+	   3 Input      8 Bit        Muxes := 1     
+	  13 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	  11 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 8     
+	  13 Input      4 Bit        Muxes := 4     
+	   2 Input      3 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 3     
+	   2 Input      2 Bit        Muxes := 6     
+	   3 Input      2 Bit        Muxes := 1     
+	  13 Input      2 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 58    
+	   4 Input      1 Bit        Muxes := 22    
+	   3 Input      1 Bit        Muxes := 3     
+	  13 Input      1 Bit        Muxes := 53    
+	   6 Input      1 Bit        Muxes := 4     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3538] Detected potentially large (wide) register buffer_flat_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:35]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:50]
+INFO: [Synth 8-3538] Detected potentially large (wide) register SCAN_OUT_BUFF_reg [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/scan_out_verilog.v:50]
+Hierarchical RTL Component report 
+Module dma_recv_data 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Registers : 
+	             1184 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input   1184 Bit        Muxes := 2     
+Module dma_send_data 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module scan_in_verilog 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 8     
+Module scan_out_verilog__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	             1184 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input   1184 Bit        Muxes := 1     
+	   2 Input   1184 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+Module TOPS_BLOCK 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 1     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   3 Input      8 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   3 Input      1 Bit        Muxes := 3     
+Module IMC_Wrapper 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 17    
+Module IMC_Wrapper__1 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Registers : 
+	                2 Bit    Registers := 1     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  13 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 17    
+Module scan_out_verilog 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input     11 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	             1184 Bit    Registers := 1     
+	               11 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   4 Input   1184 Bit        Muxes := 1     
+	   2 Input   1184 Bit        Muxes := 2     
+	   2 Input      8 Bit        Muxes := 1     
+	   4 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 7     
+Module IMC_ScanOut 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---Registers : 
+	              900 Bit    Registers := 4     
+	                8 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	  13 Input      8 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	  13 Input      4 Bit        Muxes := 2     
+	   2 Input      3 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 12    
+	  13 Input      1 Bit        Muxes := 19    
+Module Write_SRAM_WL 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 4     
+Module dma_send_data__parameterized0 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     32 Bit       Adders := 1     
+	   2 Input      9 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
++---Registers : 
+	               32 Bit    Registers := 1     
+	                8 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 6     
+Module Verilog_Controller 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input   1184 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	  11 Input     11 Bit        Muxes := 1     
+	  11 Input      6 Bit        Muxes := 1     
+	   2 Input      4 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 31    
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'write_ptr_reg[7:0]' into 'write_ptr_reg[7:0]' [D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.srcs/sources_1/new/dma_receive_data.v:27]
+INFO: [Synth 8-5544] ROM "standalone_IMC_EXT/FSM_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5544] ROM "u1_imc_scnout/external_imc_controller/FSM_state" won't be mapped to Block RAM because address size (2) smaller than threshold (5)
+INFO: [Synth 8-5546] ROM "u1_imc_scnout/FSM_state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-5546] ROM "u_write_sram/state" won't be mapped to RAM because it is too sparse
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (insti_1/\u1_imc_scnout/SCAN_IN_reg )
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 843.742 ; gain = 574.961
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |Verilog_Controller__GB0 |           1|     11793|
+|2     |Verilog_Controller__GB1 |           1|     10873|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 843.742 ; gain = 574.961
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:00:23 . Memory (MB): peak = 843.742 ; gain = 574.961
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++------+------------------------+------------+----------+
+|      |RTL Partition           |Replication |Instances |
++------+------------------------+------------+----------+
+|1     |Verilog_Controller__GB0 |           1|     11793|
+|2     |Verilog_Controller__GB1 |           1|     10873|
++------+------------------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    18|
+|2     |LUT1   |    34|
+|3     |LUT2   |    53|
+|4     |LUT3   |    84|
+|5     |LUT4   |  2209|
+|6     |LUT5   |   349|
+|7     |LUT6   |  2302|
+|8     |MUXF7  |   861|
+|9     |MUXF8  |   429|
+|10    |FDRE   |  7144|
+|11    |FDSE   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------------+------------------------------+------+
+|      |Instance                      |Module                        |Cells |
++------+------------------------------+------------------------------+------+
+|1     |top                           |                              | 13484|
+|2     |  inst                        |Verilog_Controller            | 13481|
+|3     |    standalone_IMC_EXT        |IMC_Wrapper                   |    29|
+|4     |    u1_imc_scnout             |IMC_ScanOut                   |  7336|
+|5     |      external_imc_controller |IMC_Wrapper_0                 |    38|
+|6     |      u_imc_scanout           |scan_out_verilog_1            |  1961|
+|7     |    u_recv                    |dma_recv_data                 |  3106|
+|8     |    u_scn_in                  |scan_in_verilog               |   120|
+|9     |    u_scn_out                 |scan_out_verilog              |  2535|
+|10    |    u_send_imc                |dma_send_data__parameterized0 |   108|
+|11    |    u_send_scn                |dma_send_data                 |   224|
+|12    |    u_write_sram              |Write_SRAM_WL                 |    18|
++------+------------------------------+------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 921.355 ; gain = 652.574
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:24 . Memory (MB): peak = 921.355 ; gain = 246.887
+Synthesis Optimization Complete : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 921.355 ; gain = 652.574
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Netlist 29-17] Analyzing 1308 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 921.355 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+91 Infos, 4 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 921.355 ; gain = 652.574
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 921.355 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1174] Renamed 11 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 921.355 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'D:/Chip2026/Chip2026_Testing/CHIP2026_TestingSetup.runs/design_1_Verilog_Controller_0_0_synth_1/design_1_Verilog_Controller_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file design_1_Verilog_Controller_0_0_utilization_synth.rpt -pb design_1_Verilog_Controller_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed Sep  2 11:59:12 2026...

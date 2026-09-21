@@ -1,0 +1,70 @@
+{
+  "schema": "xilinx.com:schema:json_instance:1.0",
+  "ip_inst": {
+    "xci_name": "design_1_Unbundle_AXI_Bus_0_0",
+    "component_reference": "xilinx.com:module_ref:Unbundle_AXI_Bus:1.0",
+    "ip_revision": "1",
+    "gen_directory": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_Unbundle_AXI_Bus_0_0",
+    "parameters": {
+      "component_parameters": {
+        "Component_Name": [ { "value": "design_1_Unbundle_AXI_Bus_0_0", "resolve_type": "user", "usage": "all" } ]
+      },
+      "project_parameters": {
+        "ARCHITECTURE": [ { "value": "zynq" } ],
+        "BASE_BOARD_PART": [ { "value": "em.avnet.com:zed:part0:1.4" } ],
+        "BOARD_CONNECTIONS": [ { "value": "" } ],
+        "DEVICE": [ { "value": "xc7z020" } ],
+        "PACKAGE": [ { "value": "clg484" } ],
+        "PREFHDL": [ { "value": "VERILOG" } ],
+        "SILICON_REVISION": [ { "value": "" } ],
+        "SIMULATOR_LANGUAGE": [ { "value": "MIXED" } ],
+        "SPEEDGRADE": [ { "value": "-1" } ],
+        "STATIC_POWER": [ { "value": "" } ],
+        "TEMPERATURE_GRADE": [ { "value": "" } ]
+      },
+      "runtime_parameters": {
+        "IPCONTEXT": [ { "value": "IP_Integrator" } ],
+        "IPREVISION": [ { "value": "1" } ],
+        "MANAGED": [ { "value": "TRUE" } ],
+        "OUTPUTDIR": [ { "value": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_Unbundle_AXI_Bus_0_0" } ],
+        "SELECTEDSIMMODEL": [ { "value": "" } ],
+        "SHAREDDIR": [ { "value": "../../ipshared" } ],
+        "SWVERSION": [ { "value": "2018.3" } ],
+        "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
+      }
+    },
+    "boundary": {
+      "ports": {
+        "DIG_AXI_IN_0": [ { "direction": "in", "size_left": "31", "size_right": "0" } ],
+        "DIG_AXI_IN_1": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "BANK_EN_C": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "WL_EN_C": [ { "direction": "out" } ],
+        "SA_EN_C": [ { "direction": "out" } ],
+        "BL_PCHG_C": [ { "direction": "out" } ],
+        "CLK_SA_C": [ { "direction": "out" } ],
+        "WRITE_EN_C": [ { "direction": "out" } ],
+        "CS_C": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
+        "SCN_SEL_C": [ { "direction": "out", "size_left": "3", "size_right": "0" } ],
+        "CLK_A_C": [ { "direction": "out" } ],
+        "CLK_B_C": [ { "direction": "out" } ],
+        "IN_EN_C": [ { "direction": "out" } ],
+        "SCN_IN_C": [ { "direction": "out" } ],
+        "InputEN_DAC_C": [ { "direction": "out" } ],
+        "CALIB_EN_C": [ { "direction": "out" } ],
+        "BANK_SEL_C": [ { "direction": "out" } ],
+        "CHG_EN_C": [ { "direction": "out" } ],
+        "RST_CAP_B_C": [ { "direction": "out" } ],
+        "VDAC_CTRL_C": [ { "direction": "out" } ],
+        "VTC_EN_C": [ { "direction": "out" } ],
+        "TDC_EN_C": [ { "direction": "out" } ],
+        "TDC_RST_C": [ { "direction": "out" } ],
+        "TDC_COMPUTE_C": [ { "direction": "out" } ],
+        "DFF_RST_C": [ { "direction": "out" } ],
+        "CTRL_EN_C": [ { "direction": "out" } ],
+        "CTRL_VB_C": [ { "direction": "out" } ],
+        "CTRL_VBP_C": [ { "direction": "out" } ],
+        "CTRL_VBN_C": [ { "direction": "out" } ]
+      }
+    }
+  }
+}
