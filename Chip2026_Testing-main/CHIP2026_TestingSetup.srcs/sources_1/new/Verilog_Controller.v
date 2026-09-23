@@ -19,85 +19,82 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module Verilog_Controller(
 
     ////////////////////////////////////////////////////////
-    // Bank-Enable Signals
-    input  [3:0] BANK_EN_C,
-
     // Read-Write Signals
     input        WL_EN_C,
     input        SA_EN_C,
     input        BL_PCHG_C,
     input        CLK_SA_C,
-    input        WRITE_EN_C,
-    input  [1:0] CS_C,
+    input        READ_EN_C
+    input        WEN_C,
+    input  [1:0] CS_B_C,
 
     // Scan-Chain Signals
-    input  [3:0] SCN_SEL_C,
-    input        CLK_A_C,
-    input        CLK_B_C,
+    input  [2:0]  SCN_SEL_C,
+    input        CLKA_C,
+    input        CLKB_C,
     input        IN_EN_C,
     input        SCN_IN_C,
 
-    // Compute Control Signals
-    input        InputEN_DAC_C,
-    input        CALIB_EN_C,
-    input        BANK_SEL_C,
-    input        CHG_EN_C,
-    input        RST_CAP_B_C,
-    input        VDAC_CTRL_C,
-    input        VTC_EN_C,
-    input        TDC_EN_C,
-    input        TDC_RST_C,
-    input        TDC_COMPUTE_C,
+    // Other Signals
+    input        COMPUTE_EN_C,
     input        DFF_RST_C,
-    input        CTRL_EN_C,
+    input        MUX_OUT_PAD_C,
+    input        CONTROL_EN_C,
+    input        CLK_OUT_PAD_C,
+    input        osc_EN_C,
 
-    // PCB TMUX control signals
-    input        CTRL_VB_C,
-    input        CTRL_VBP_C,
-    input        CTRL_VBN_C,
+    // control signals
+    input        [3:0] caturestart_C,
+    input        [3:0] div_ratio_C,
+    input        [3:0] SAMPLE_EDGE_TIME_C,
 
     ////////////////////////////////////////////////////////
+    // R/W signals
+    ////////////////////////////////////////////////////////
 
-    output [3:0] BANK_EN,
+    output        WL_EN,
+    output        SA_EN,
+    output        BL_PCHG,
+    output        CLK_SA,
+    output        WEN,
+    output        READ_EN,
+    output [1:0]  CS_B,
 
-    output       WL_EN,
-    output       SA_EN,
-    output       BL_PCHG,
-    output       CLK_SA,
-    output       WRITE_EN,
-    output [1:0] CS,
+    ////////////////////////////////////////////////////////
+    // Scan Chain Signals
+    ////////////////////////////////////////////////////////
 
-    output [3:0] SCN_SEL,
-    output       CLK_A,
-    output       CLK_B,
-    output       IN_EN,
-    output       SCN_IN,
+    output [2:0]  SCN_SEL,
+    output        CLKA,
+    output        CLKB,
+    output        IN_EN,
+    output        SCN_IN,
 
-    output       InputEN_DAC,
-    output       CALIB_EN,
-    output       BANK_SEL,
-    output       CHG_EN,
-    output       RST_CAP_B,
-    output       VDAC_CTRL,
-    output       VTC_EN,
-    output       TDC_EN,
-    output       TDC_RST,
-    output       TDC_COMPUTE,
-    output       DFF_RST,
-    output       CTRL_EN,
+    ////////////////////////////////////////////////////////
+    // Other Signals
+    ////////////////////////////////////////////////////////
 
-    // PCB TMUX control signals
-    output       CTRL_VB,
-    output       CTRL_VBP,
-    output       CTRL_VBN,
+    output        COMPUTE_EN,
+    output        DFF_RST,
+    output        MUX_OUT_PAD,
+    output        CONTROL_EN,
+    output        CLK_OUT_PAD,
+    output        osc_EN,
+
+    ////////////////////////////////////////////////////////
+    // Control Signals
+    ////////////////////////////////////////////////////////
+
+    output        [3:0] caturestart,
+    output        [3:0] div_ratio,
+    output        [3:0] SAMPLE_EDGE_TIME
 
     // Renamed to avoid AXI inference issues
     input  [31:0] scan_mode_setting_in,
-    input  [1:0]  dig_out,
+    input  [2:0]  dig_out,
 
     ////////////////////////////////////////////////////////
     // DMA / Stream Signals
