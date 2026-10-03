@@ -1,6 +1,26 @@
 # -----------------------------------------------------------------------------
 # FMC Pin Assignments
 # -----------------------------------------------------------------------------
+#
+# CHIP 2026 pad map reference:
+# This project uses the FMC package pin assignments as the board-level view of the
+# CHIP 2026 pad ring. The underlying chip pad planning shown in the design notes
+# uses the following groups and naming conventions:
+#
+#   Power / ground:
+#     VDDQ, VDD, VSS, GND
+#
+#   Digital / I/O pads:
+#     PAD_D0, PAD_D1, PAD_DI, PAD_DO, PAD_IO_0 ... PAD_IO_N
+#     PAD_CI, PAD_CO, PAD_AN, PAD_C0, PAD_C1
+#
+#   Scan / control pads:
+#     SCN_IN, SCN_OUT, CLKA, CLKB, IN_EN, MUX_OUT, SAMPLE_E,
+#     CONTROL, TEST, CLK_NE, DFF_RST, etc.
+#
+# The constraints below map the FMC board pins to the FPGA ports used in the test
+# setup. This is the physical implementation layer for the chip pad ring plan.
+# -----------------------------------------------------------------------------
 
 set_property PACKAGE_PIN B16 [get_ports FMC_B16]
 set_property PACKAGE_PIN B17 [get_ports FMC_B17]
