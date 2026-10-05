@@ -1,7 +1,28 @@
-module Verilog_Controller(
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// Company: 
+// Engineer: 
+// 
+// Create Date: 20.05.2026 23:13:12
+// Design Name: 
+// Module Name: Verilog_Controller
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
+// 
+// Dependencies: 
+// 
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
+// 
+//////////////////////////////////////////////////////////////////////////////////
 
+module Verilog_Controller(
     ////////////////////////////////////////////////////////
     // Read-Write Signals
+    ////////////////////////////////////////////////////////
     input        WL_EN_C,
     input        SA_EN_C,
     input        BL_PCHG_C,
@@ -10,14 +31,18 @@ module Verilog_Controller(
     input        WEN_C,
     input  [1:0] CS_B_C,
 
+    ////////////////////////////////////////////////////////
     // Scan-Chain Signals
-    input  [2:0]  SCN_SEL_C,
+    ////////////////////////////////////////////////////////
+    input  [2:0] SCN_SEL_C,
     input        CLKA_C,
     input        CLKB_C,
     input        IN_EN_C,
     input        SCN_IN_C,
 
+    ////////////////////////////////////////////////////////
     // Other Signals
+    ////////////////////////////////////////////////////////
     input        COMPUTE_EN_C,
     input        DFF_RST_C,
     input        MUX_OUT_PAD_C,
@@ -25,15 +50,16 @@ module Verilog_Controller(
     input        CLK_OUT_PAD_C,
     input        osc_EN_C,
 
-    // control signals
-    input        [3:0] caturestart_C,
-    input        [3:0] div_ratio_C,
-    input        [3:0] SAMPLE_EDGE_TIME_C,
+    ////////////////////////////////////////////////////////
+    // Control Signals
+    ////////////////////////////////////////////////////////
+    input  [3:0] capturestart_C,
+    input  [3:0] div_ratio_C,
+    input  [3:0] SAMPLE_EDGE_TIME_C,
 
     ////////////////////////////////////////////////////////
     // R/W signals
     ////////////////////////////////////////////////////////
-
     output        WL_EN,
     output        SA_EN,
     output        BL_PCHG,
@@ -45,7 +71,6 @@ module Verilog_Controller(
     ////////////////////////////////////////////////////////
     // Scan Chain Signals
     ////////////////////////////////////////////////////////
-
     output [2:0]  SCN_SEL,
     output        CLKA,
     output        CLKB,
@@ -55,7 +80,6 @@ module Verilog_Controller(
     ////////////////////////////////////////////////////////
     // Other Signals
     ////////////////////////////////////////////////////////
-
     output        COMPUTE_EN,
     output        DFF_RST,
     output        MUX_OUT_PAD,
@@ -66,41 +90,34 @@ module Verilog_Controller(
     ////////////////////////////////////////////////////////
     // Control Signals
     ////////////////////////////////////////////////////////
-
-    output        [3:0] caturestart,
-    output        [3:0] div_ratio,
-    output        [3:0] SAMPLE_EDGE_TIME,
-
-    ////////////////////////////////////////////////////////
-    // Chip-level testing / word-line map compatibility notes:
-    // The project notebook notes indicate a WL (word-line), scan-channel, and
-    // read/write planning view for a 1536-WL style array. The legacy names used
-    // here are kept intentionally for compatibility with the existing RTL and
-    // interface map. The following mode/control inputs are configured externally
-    // and should remain part of the module interface.
-    ////////////////////////////////////////////////////////
-    input  [31:0] scan_mode_setting_in,
-    input  [2:0]  dig_out,
-
-    ////////////////////////////////////////////////////////
-    // DMA / Stream Signals
-    ////////////////////////////////////////////////////////
-
-    input         clk,
-    // Memory mapped to stream MM2S
-    input         in_tvalid,
-    input         in_tlast,
-    input  [31:0] in_tdata,
-    output        in_tready,
-    // Stream to Memory mapped S2MM
-    input         out_tready,
-    output        out_tvalid,
-    output        out_tlast,
-    output [31:0] out_tdata,
-
-    ////////////////////////////////////////////////////////
-    // Scan Data Flags
-    ////////////////////////////////////////////////////////
-
-    output [3:0] SCAN_DONE_FLAGS
+    output [3:0] capturestart,
+    output [3:0] div_ratio,
+    output [3:0] SAMPLE_EDGE_TIME
 );
+
+    assign WL_EN        = WL_EN_C;
+    assign SA_EN        = SA_EN_C;
+    assign BL_PCHG      = BL_PCHG_C;
+    assign CLK_SA      = CLK_SA_C;
+    assign WEN         = WEN_C;
+    assign READ_EN     = READ_EN_C;
+    assign CS_B        = CS_B_C;
+
+    assign SCN_SEL     = SCN_SEL_C;
+    assign CLKA        = CLKA_C;
+    assign CLKB        = CLKB_C;
+    assign IN_EN       = IN_EN_C;
+    assign SCN_IN      = SCN_IN_C;
+
+    assign COMPUTE_EN  = COMPUTE_EN_C;
+    assign DFF_RST     = DFF_RST_C;
+    assign MUX_OUT_PAD = MUX_OUT_PAD_C;
+    assign CONTROL_EN  = CONTROL_EN_C;
+    assign CLK_OUT_PAD = CLK_OUT_PAD_C;
+    assign osc_EN      = osc_EN_C;
+
+    assign capturestart = capturestart_C;
+    assign div_ratio    = div_ratio_C;
+    assign SAMPLE_EDGE_TIME = SAMPLE_EDGE_TIME_C;
+
+endmodule
