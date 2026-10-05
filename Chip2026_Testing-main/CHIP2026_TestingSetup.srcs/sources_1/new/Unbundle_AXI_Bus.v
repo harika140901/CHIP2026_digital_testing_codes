@@ -64,7 +64,7 @@ module Unbundle_AXI_Bus(
 );
 
     ////////////////////////////////////////////////////////
-    // Direct bit mapping from the AXI word to the legacy controller bus
+
     ////////////////////////////////////////////////////////
     assign capturestart_C[0] = DIG_AXI_IN_0[0];
     assign capturestart_C[1] = DIG_AXI_IN_0[1];

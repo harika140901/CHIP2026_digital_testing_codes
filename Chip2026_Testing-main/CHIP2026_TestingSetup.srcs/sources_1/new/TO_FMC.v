@@ -3,7 +3,7 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 231.09.2026 11:17:02
+// Create Date: 23.09.2026 11:17:02
 // Design Name: 
 // Module Name: TO_FMC
 // Project Name: 
@@ -22,7 +22,7 @@
 
 module TO_FMC(
 
-    input [3:0] caturestart,
+    input [3:0] capturestart,
     input  [3:0] div_ratio,
     input  [3:0] SAMPLE_EDGE_TIME,
     input  [2:0] SCN_SEL,
@@ -140,10 +140,10 @@ module TO_FMC(
     
 
     //Update DEBUG AXI PINS 
-    assign DIG_DEBUG_AXI_OUT_0[0]  = caturestart[0];
-    assign DIG_DEBUG_AXI_OUT_0[1]  = caturestart[1];
-    assign DIG_DEBUG_AXI_OUT_0[2]  = caturestart[2];
-    assign DIG_DEBUG_AXI_OUT_0[3]  = caturestart[3];
+    assign DIG_DEBUG_AXI_OUT_0[0]  = capturestart[0];
+    assign DIG_DEBUG_AXI_OUT_0[1]  = capturestart[1];
+    assign DIG_DEBUG_AXI_OUT_0[2]  = capturestart[2];
+    assign DIG_DEBUG_AXI_OUT_0[3]  = capturestart[3];
     assign DIG_DEBUG_AXI_OUT_0[4]  = div_ratio[0];
     assign DIG_DEBUG_AXI_OUT_0[5]  = div_ratio[1];
     assign DIG_DEBUG_AXI_OUT_0[6]  = div_ratio[2];
