@@ -10,19 +10,25 @@
 // Target Devices: 
 // Tool Versions: 
 // Description: 
+// Refactored to support 6 scan chains with per-chain lengths:
+//   1 = input scan chain 2 (1152 bits)
+//   2 = input scan chain 1 (1152 bits)
+//   3 = output scan chain (475 bits)
+//   4 = WL scan chain (1536 bits)
+//   5 = read (50 bits)
+//   6 = write (50 bits)
 // 
-// Dependencies: 
+// Dependencies: IMC_Wrapper, scan_out_verilog
 // 
 // Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
+// Revision 0.02 - Updated for per-chain length support
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
 
 module IMC_ScanOut(
     input  wire             CLK,
     input  wire             EN,          // enable/start
+    input  wire [2:0]       SCN_SEL,     // 3-bit scan chain select (001-110)
     input  wire             SCAN_OUT,    // input from chip
     input  wire             IMC_DONE,    // IMC_DONE from chip
     input  wire             IMC_MODE,    // 0: Internal Mode; 1: External Mode
@@ -44,33 +50,50 @@ module IMC_ScanOut(
     output reg              BANK_SEL,    // 1-bit bank select
     output reg [3:0]        BANK_EN,
     output reg              DFF_RST,
-    output wire [3:0]       SCAN_SEL,
     output reg              DONE,
-    output wire [3615:0]    OUT         // padded with 16 bits in the MSB (to make multiple of 32-bits)
+    output wire [3615:0]    OUT         // output buffer (max 1536 bits + padding)
     );
     
-    ////////////// CONSTANTS //////////////
-    localparam N_bits    = 900;
+    ////////////// SCAN CHAIN DEFINITIONS //////////////
+    localparam CHAIN_IN2   = 3'd1;   // input scan chain 2
+    localparam CHAIN_IN1   = 3'd2;   // input scan chain 1
+    localparam CHAIN_OUT   = 3'd3;   // output scan chain
+    localparam CHAIN_WL    = 3'd4;   // WL scan chain
+    localparam CHAIN_READ  = 3'd5;   // read
+    localparam CHAIN_WRITE = 3'd6;   // write
+    
     localparam Ncycles   = 1;
     
-    reg [3:0] FSM_state; // state machine counter
-    reg [899:0] out_buf[3:0];
-    assign OUT = {16'b0, out_buf[3],out_buf[2],out_buf[1],out_buf[0]};
+    ////////////// SCAN LENGTH DECODER //////////////
+    wire [10:0] scan_len_bits;
+    always @(*) begin
+        case (SCN_SEL)
+            CHAIN_IN2:   scan_len_bits = 11'd1152;
+            CHAIN_IN1:   scan_len_bits = 11'd1152;
+            CHAIN_OUT:   scan_len_bits = 11'd475;
+            CHAIN_WL:    scan_len_bits = 11'd1536;
+            CHAIN_READ:  scan_len_bits = 11'd50;
+            CHAIN_WRITE: scan_len_bits = 11'd50;
+            default:     scan_len_bits = 11'd0;
+        endcase
+    end
+    
+    ////////////// OUTPUT BUFFER //////////////
+    reg [1535:0] out_buf;
+    assign OUT = {2080'b0, out_buf};  // pad to 3616 bits
     
     ////////////// State Encodings //////////////
     localparam ST_IDLE          = 4'd0;
-    localparam ST_SET_SCNID     = 4'd1;
-    localparam ST_SET_BANK      = 4'd2;
-    localparam ST_BANK_EN       = 4'd3;
-    localparam ST_IMC_START     = 4'd4;
-    localparam ST_IMC_WAIT      = 4'd5;
-    localparam ST_IN_EN_ON      = 4'd6;
-    localparam ST_CLK_A_HI      = 4'd7;
-    localparam ST_CLK_A_LO      = 4'd8;
-    localparam ST_IN_EN_OFF     = 4'd9;
-    localparam ST_SCAN_OUT      = 4'd10;
-    localparam ST_NEXT          = 4'd11;
-    localparam ST_DONE          = 4'd12;
+    localparam ST_IMC_START     = 4'd1;
+    localparam ST_IMC_WAIT      = 4'd2;
+    localparam ST_IN_EN_ON      = 4'd3;
+    localparam ST_CLK_A_HI      = 4'd4;
+    localparam ST_CLK_A_LO      = 4'd5;
+    localparam ST_IN_EN_OFF     = 4'd6;
+    localparam ST_SCAN_OUT      = 4'd7;
+    localparam ST_DONE          = 4'd8;
+    
+    reg [3:0] FSM_state;
     
     ////////////// External IMC Module //////////////
     wire Ext_IMC_DONE, Ext_IMC_EN;
@@ -80,7 +103,7 @@ module IMC_ScanOut(
     
     IMC_Wrapper external_imc_controller (
         .EN(Ext_IMC_EN),
-        .TOPS_en(1'b0), // connect it to GND, TOPS_en mode is not required here
+        .TOPS_en(1'b0),
         .CLK(CLK), .CHG_EN(CHG_EN), .RST_CAP(RST_CAP),
         .VDAC_CTRL(VDAC_CTRL), .TDC_EN(TDC_EN), .TDC_RST(TDC_RST),
         .TDC_COMPUTE(TDC_COMPUTE), .VTC_EN(VTC_EN),
@@ -88,30 +111,27 @@ module IMC_ScanOut(
     );
     wire IMC_DONE_SEL;
     assign IMC_DONE_SEL = (IMC_MODE) ? Ext_IMC_DONE : IMC_DONE;
+    
     ////////////// SCAN_OUT_MODULE //////////////
     wire submodule_scan_done, CLK_A_scnout;
-    wire [32*37-1:0] scanned_bits;
+    wire [1535:0] scanned_bits;
+    
     scan_out_verilog u_imc_scanout (
         .EN(FSM_state == ST_SCAN_OUT),
         .CLK(CLK),
         .N_CYCLES(Ncycles),
         .SCAN_OUT(SCAN_OUT),
-        .scan_len_bits(N_bits),
+        .scan_len_bits(scan_len_bits),
         .CLK_A(CLK_A_scnout),
         .CLK_B(CLK_B),
         .SCAN_DONE(submodule_scan_done),
         .SCAN_OUT_BUFF(scanned_bits)
     );
+    
     reg CLK_A_load;
     assign CLK_A = CLK_A_scnout | CLK_A_load;
     
     reg [7:0] delay_cnt;
-    reg scan_id_cnt, bank_cnt;
-    reg [3:0] scan_idx;
-    ////////////// SCAN_SELECT //////////////
-    
-    assign SCAN_SEL = {3'b000, scan_id_cnt};
-    
     
     ////////////// FSM LOGIC //////////////
     always @(posedge CLK) begin
@@ -120,62 +140,40 @@ module IMC_ScanOut(
             IN_EN <= 0; CLK_A_load <= 0;
             BANK_SEL <= 0; BANK_EN <= 4'b0000; 
             DFF_RST <= 0; DONE <= 0;
-            
-            delay_cnt <= 0; bank_cnt <= 0;
-            scan_id_cnt <= 0; scan_idx <= 0;
+            delay_cnt <= 0;
             SCAN_IN <= 0;
+            out_buf <= 1536'b0;
         end
         else begin
             delay_cnt <= delay_cnt + 1;
             case(FSM_state)
                 ST_IDLE: begin
-                    FSM_state <= ST_SET_SCNID;
+                    FSM_state <= ST_IMC_START;
                 end
-                ST_SET_SCNID: begin
-                    FSM_state <= ST_SET_BANK;
-                end
-                ST_SET_BANK: begin
-                    BANK_SEL  <= bank_cnt;
-                    delay_cnt <= 0;
-                    FSM_state <= ST_BANK_EN;
-                end
-                ST_BANK_EN: begin
-                    if(scan_id_cnt == 0 && bank_cnt == 0) begin
-                        BANK_EN <= 4'b0001;
-                    end
-                    if(scan_id_cnt == 0 && bank_cnt == 1) begin
-                        BANK_EN <= 4'b0010;
-                    end
-                    if(scan_id_cnt == 1 && bank_cnt == 0) begin
-                        BANK_EN <= 4'b0100;
-                    end
-                    if(scan_id_cnt == 1 && bank_cnt == 1) begin
-                        BANK_EN <= 4'b1000;
-                    end
-                    if(delay_cnt == Ncycles) begin
-                        FSM_state <= ST_IMC_START;
-                        delay_cnt <= 0;
-                    end
-                end
+                
                 ST_IMC_START: begin
                     if(!IMC_MODE) begin
                         DFF_RST <= 1;
                     end
+                    delay_cnt <= 0;
                     FSM_state <= ST_IMC_WAIT;
                 end
+                
                 ST_IMC_WAIT: begin
-                    if(IMC_DONE_SEL)begin
+                    if(IMC_DONE_SEL) begin
                         FSM_state <= ST_IN_EN_ON;
                     end
                 end
+                
                 ST_IN_EN_ON: begin
                     IN_EN <= 1;
                     SCAN_IN <= 0;
+                    delay_cnt <= 0;
                     if (delay_cnt == Ncycles) begin
-                        delay_cnt <= 0;
                         FSM_state <= ST_CLK_A_HI;
                     end
                 end
+                
                 ST_CLK_A_HI: begin
                     CLK_A_load <= 1;
                     if (delay_cnt == Ncycles) begin
@@ -183,6 +181,7 @@ module IMC_ScanOut(
                         FSM_state <= ST_CLK_A_LO;
                     end
                 end
+                
                 ST_CLK_A_LO: begin
                     CLK_A_load <= 0;
                     if (delay_cnt == Ncycles) begin
@@ -190,6 +189,7 @@ module IMC_ScanOut(
                         FSM_state <= ST_IN_EN_OFF;
                     end
                 end
+                
                 ST_IN_EN_OFF: begin
                     IN_EN <= 0;
                     if (delay_cnt == Ncycles) begin
@@ -197,34 +197,25 @@ module IMC_ScanOut(
                         FSM_state <= ST_SCAN_OUT;
                     end
                 end
+                
                 ST_SCAN_OUT: begin
                     if(submodule_scan_done) begin
-                        out_buf[scan_idx] <= scanned_bits[899:0];
-                        scan_idx <= scan_idx + 1;
-                        FSM_state <= ST_NEXT;
+                        out_buf <= scanned_bits;
+                        DFF_RST <= 0;
+                        FSM_state <= ST_DONE;
                     end
                 end
-                ST_NEXT: begin
-                    DFF_RST <= 0;
-                    if(bank_cnt == 0) begin
-                        bank_cnt <= bank_cnt + 1;
-                        FSM_state <= ST_SET_BANK;
-                    end else begin
-                        bank_cnt <= 0;
-                        if(scan_id_cnt == 0) begin
-                            scan_id_cnt <= 1;
-                            FSM_state <= ST_SET_SCNID;
-                        end else begin
-                            FSM_state <= ST_DONE;
-                        end
-                    end
-                end
+                
                 ST_DONE: begin
-                    DONE <= 1; IN_EN <= 0;
-                    CLK_A_load <= 0; BANK_SEL <= 0;
-                    BANK_EN <= 4'b0000; DFF_RST <= 0;
+                    DONE <= 1; 
+                    IN_EN <= 0;
+                    CLK_A_load <= 0; 
+                    BANK_SEL <= 0;
+                    BANK_EN <= 4'b0000; 
+                    DFF_RST <= 0;
                     delay_cnt <= 0;
                 end
+                
                 default: FSM_state <= ST_IDLE;
             endcase
         end
