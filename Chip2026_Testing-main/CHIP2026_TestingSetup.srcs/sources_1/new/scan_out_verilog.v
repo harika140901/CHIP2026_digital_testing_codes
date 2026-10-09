@@ -1,21 +1,14 @@
-//////////////////////////////////////////////////////////////////////////////////
-// Module: scan_out_verilog
-// Description: Captures bits from SCAN_OUT input using CLK_A/CLK_B
-//              and stores them in output buffer.
-//              Supports variable chain lengths via scan_len_bits parameter.
-//////////////////////////////////////////////////////////////////////////////////
-
 module scan_out_verilog (
     input  wire        EN,
     input  wire        CLK,
     input  wire [7:0]  N_CYCLES,
     input  wire        SCAN_OUT,
-    input  wire [10:0] scan_len_bits,
+    input  wire [10:0]  scan_len_bits,
 
     output reg         CLK_A,
     output reg         CLK_B,
     output reg         SCAN_DONE,
-    output reg [1535:0] SCAN_OUT_BUFF
+    output reg [32*48-1:0] SCAN_OUT_BUFF
 );
 
     reg [10:0] i;
@@ -30,7 +23,7 @@ module scan_out_verilog (
             CLK_A <= 0;
             CLK_B <= 0;
             SCAN_DONE <= 0;
-            SCAN_OUT_BUFF <= 1536'b0;
+            SCAN_OUT_BUFF <= 0;  // FIXED: explicitly clear buffer on reset
         end else if (!SCAN_DONE) begin
             cycle_count <= cycle_count + 1;
 
@@ -54,7 +47,7 @@ module scan_out_verilog (
 
                 2: begin // CLK_A high, sample SCAN_OUT
                     CLK_A <= 1;
-                    SCAN_OUT_BUFF[i] <= SCAN_OUT;
+                    SCAN_OUT_BUFF[i] <= SCAN_OUT;  // direct write
                     if (cycle_count == N_CYCLES) begin
                         cycle_count <= 0;
                         phase <= 3;
@@ -67,6 +60,7 @@ module scan_out_verilog (
                         cycle_count <= 0;
                         if (i >= scan_len_bits - 1) begin
                             SCAN_DONE <= 1;
+                            i <= 0;  // FIXED: reset i immediately when scan completes
                         end else begin
                             i <= i + 1;
                             phase <= 0;
