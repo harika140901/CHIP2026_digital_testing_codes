@@ -9,7 +9,7 @@ module dma_send_data (
     m_axis_tready
 );
 
-    parameter BUFF_SIZE = 32*37;
+    parameter BUFF_SIZE = 32*48;
     parameter MAX_ITER_BITS = 16; 
     
     input  wire        clk;
