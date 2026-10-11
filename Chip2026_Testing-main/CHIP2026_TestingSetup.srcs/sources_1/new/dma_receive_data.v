@@ -7,7 +7,7 @@ module dma_recv_data (
     s_axis_tready,  // Added tready signal
     buffer_flat
 );
-    parameter BUFF_SIZE = 32*37;
+    parameter BUFF_SIZE = 32*48;
     parameter MAX_ITER_BITS = 16; 
     input wire clk;
     input wire EN;

@@ -4,20 +4,21 @@
 // Engineer: 
 // 
 // Create Date: 23.09.2026 11:17:02
-// Design Name: 
+// Design Name: .
 // Module Name: TO_FMC
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
-// Description: FMC interface mapping for CHIP2026 testing.
-//              Maps control signals to board-level FMC pins and debug outputs.
+// Description: 
 // 
 // Dependencies: 
 // 
 // Revision:
-// Revision 0.02 - Fixed scalar debug output and aligned scan-chain support
+// Revision 0.01 - File Created
+// Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
+
 
 module TO_FMC(
 
@@ -171,6 +172,6 @@ module TO_FMC(
     assign DIG_DEBUG_AXI_OUT_0[29] = SA_EN;
     assign DIG_DEBUG_AXI_OUT_0[30] = BL_PCHG;
     assign DIG_DEBUG_AXI_OUT_0[31] = osc_EN;
-    assign DIG_DEBUG_AXI_OUT_1 = WL_EN;
+    assign DIG_DEBUG_AXI_OUT_1 = WL_EN;  // FIXED: scalar assignment (was incorrectly indexed as [0])
       
 endmodule

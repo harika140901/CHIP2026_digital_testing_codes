@@ -1,23 +1,22 @@
-//Faster scan in using 100MHz clock. This assumes all the pre signals are set to proper state. 
+// Faster scan in using 100MHz clock. This assumes all the pre signals are set to proper state.
 module scan_in_verilog(
     input wire EN,
     input wire CLK,
-    input wire [7:0] N_CYCLES,              // Defines the switching resolution: Ncycles = 1 => 10ns
-    input wire [32*37-1:0] scan_in_buff,
-    input wire [10:0] scan_len_bits,        // This can be max 1152 bits so 11 bits are enough
+    input wire [7:0] N_CYCLES,
+    input wire [32*48-1:0] scan_in_buff,
+    input wire [10:0] scan_len_bits,
     output reg SCAN_IN,
     output reg CLK_A,
     output reg CLK_B,
     output reg SCAN_DONE
 );
 
-    reg [10:0] i = 0; //This needs to be same as scan_len_bits
+    reg [10:0] i = 0;
     reg [7:0] cycle_count = 0;
     reg [1:0] phase = 0;
-    
+
     always @(posedge CLK) begin
         if (!EN) begin
-            // Reset all outputs and internal state
             i <= 0;
             cycle_count <= 0;
             phase <= 0;
@@ -27,6 +26,7 @@ module scan_in_verilog(
             SCAN_DONE <= 0;
         end else if (!SCAN_DONE) begin
             cycle_count <= cycle_count + 1;
+
             case (phase)
                 0: begin // Set SCAN_IN and CLK_A high
                     SCAN_IN <= scan_in_buff[i];
@@ -60,6 +60,7 @@ module scan_in_verilog(
                         cycle_count <= 0;
                         if (i >= scan_len_bits - 1) begin
                             SCAN_DONE <= 1;
+                            i <= 0;
                         end else begin
                             i <= i + 1;
                             phase <= 0;
@@ -69,5 +70,4 @@ module scan_in_verilog(
             endcase
         end
     end
-
 endmodule
