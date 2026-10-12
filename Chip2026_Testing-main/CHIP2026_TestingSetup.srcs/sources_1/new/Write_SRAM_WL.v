@@ -1,10 +1,10 @@
 module Write_SRAM_WL(
     input  wire        CLK,               // Global Clock 
-    input  wire        EN,                // start trigger
+    input  wire        EN,                // start trigger - active low
     output reg         done,              // FSM complete
     
     // Write PADS required
-    output reg         WRITE_EN,
+    output reg         WEN,
     output reg         WL_EN
 );
 
@@ -12,10 +12,10 @@ module Write_SRAM_WL(
     parameter N_CYCLES        = 8'd1;
     // FSM states
     parameter IDLE            = 3'd0;
-    parameter WRITE_EN_ON     = 3'd1;
+    parameter WEN_ON     = 3'd1;
     parameter WL_EN_ON        = 3'd2;
     parameter WL_EN_OFF       = 3'd3;
-    parameter WRITE_EN_OFF    = 3'd4;
+    parameter WEN_OFF    = 3'd4;
     parameter FINISH          = 3'd5;
 
     reg [2:0] state;
@@ -23,9 +23,10 @@ module Write_SRAM_WL(
 
     // FSM sequential logic
     always @(posedge CLK) begin
+    
         if(!EN)begin
             // Defaults
-            WRITE_EN  <= 0;
+            WEN  <= 0;
             WL_EN     <= 0;
             done      <= 0;
             delay_cnt <= 0;
@@ -36,12 +37,12 @@ module Write_SRAM_WL(
             delay_cnt <= delay_cnt + 1;
             case (state)
                 IDLE: begin
-                    state <= WRITE_EN_ON; // No waiting
+                    state <= WEN_ON; // No waiting
                     delay_cnt <= 0;
                 end
 
-                WRITE_EN_ON: begin
-                    WRITE_EN <= 1;
+                WEN_ON: begin
+                    WEN <= 1;
                     if (delay_cnt == N_CYCLES) begin
                         state     <= WL_EN_ON;
                         delay_cnt <= 0;
@@ -49,7 +50,7 @@ module Write_SRAM_WL(
                 end
     
                 WL_EN_ON: begin
-                    WRITE_EN <= 1;
+                    WEN <= 1;
                     WL_EN    <= 1;
                     if (delay_cnt == N_CYCLES) begin
                         state     <= WL_EN_OFF;
@@ -61,13 +62,13 @@ module Write_SRAM_WL(
                     WRITE_EN <= 1;
                     WL_EN    <= 0;
                     if (delay_cnt == N_CYCLES) begin
-                        state     <= WRITE_EN_OFF;
+                        state     <= WEN_OFF;
                         delay_cnt <= 0;
                     end
                 end
     
-                WRITE_EN_OFF: begin
-                    WRITE_EN <= 0;
+                WEN_OFF: begin
+                    WEN <= 0;
                     WL_EN    <= 0;
                     if (delay_cnt == N_CYCLES) begin
                         state     <= FINISH;
@@ -77,7 +78,7 @@ module Write_SRAM_WL(
     
                 FINISH: begin
                     done <= 1;
-                    WRITE_EN  <= 0;
+                    WEN  <= 0;
                     WL_EN     <= 0;
                     delay_cnt <= 0;
                 end

@@ -2,7 +2,6 @@
 module scan_in_verilog(
     input wire EN,
     input wire CLK,
-    input wire [7:0] N_CYCLES,
     input wire [32*48-1:0] scan_in_buff,
     input wire [10:0] scan_len_bits,
     output reg SCAN_IN,
@@ -12,59 +11,43 @@ module scan_in_verilog(
 );
 
     reg [10:0] i = 0;
-    reg [7:0] cycle_count = 0;
     reg [1:0] phase = 0;
 
     always @(posedge CLK) begin
         if (!EN) begin
             i <= 0;
-            cycle_count <= 0;
             phase <= 0;
             SCAN_IN <= 0;
             CLK_A <= 0;
             CLK_B <= 0;
             SCAN_DONE <= 0;
         end else if (!SCAN_DONE) begin
-            cycle_count <= cycle_count + 1;
-
             case (phase)
                 0: begin // Set SCAN_IN and CLK_A high
                     SCAN_IN <= scan_in_buff[i];
                     CLK_A <= 1;
                     CLK_B <= 0;
-                    if (cycle_count == N_CYCLES) begin
-                        cycle_count <= 0;
-                        phase <= 1;
-                    end
+                    phase <= 1;
                 end
 
                 1: begin // CLK_A low
                     CLK_A <= 0;
-                    if (cycle_count == N_CYCLES) begin
-                        cycle_count <= 0;
-                        phase <= 2;
-                    end
+                    phase <= 2;
                 end
 
                 2: begin // CLK_B high
                     CLK_B <= 1;
-                    if (cycle_count == N_CYCLES) begin
-                        cycle_count <= 0;
-                        phase <= 3;
-                    end
+                    phase <= 3;
                 end
 
                 3: begin // CLK_B low and increment i or finish
                     CLK_B <= 0;
-                    if (cycle_count == N_CYCLES) begin
-                        cycle_count <= 0;
-                        if (i >= scan_len_bits - 1) begin
-                            SCAN_DONE <= 1;
-                            i <= 0;
-                        end else begin
-                            i <= i + 1;
-                            phase <= 0;
-                        end
+                    if (i >= scan_len_bits - 1) begin
+                        SCAN_DONE <= 1;
+                        i <= 0;
+                    end else begin
+                        i <= i + 1;
+                        phase <= 0;
                     end
                 end
             endcase

@@ -3,84 +3,75 @@
 module IMC_Wrapper (
     input  wire CLK,
     input  wire EN,
+    input wire cyc_one,
     input  wire TOPS_en,
-    output reg CHG_EN,
-    output reg RST_CAP,
-    output reg VDAC_CTRL,
-    output reg TDC_EN,
-    output reg TDC_COMPUTE,
-    output reg TDC_RST,
-    output reg VTC_EN,
+    output reg COMPUTE_EN,
+    output reg MUX_SEL,
+    output reg CLK_CAPTURE,
 
     output reg IMC_DONE
 );
 
     reg [3:0] FSM_state;
-    reg [1:0] delay_cnt;
     localparam IDLE              = 4'd0;
-    localparam TDC_RESET_ON      = 4'd1;
-    localparam TDC_RESET_OFF     = 4'd2;
-    localparam VDAC_ON           = 4'd3;
-    localparam CAP_RESET_ON      = 4'd4;
-    localparam CHARGE_ON         = 4'd5;
-    localparam VTC_TDC_ON        = 4'd6;
-    localparam TDC_EN_OFF        = 4'd7;
-    localparam TDC_COMPUTE_ON    = 4'd8;
-    localparam COMPUTE_VDAC_OFF  = 4'd9;
-    localparam CHARGE_OFF        = 4'd10;
-    localparam CAP_RESET_OFF     = 4'd11;
-    localparam DONE              = 4'd12;
+    localparam COMPUTE_EN_ON     = 4'd1;
+    localparam MUX_SEL_LOW       = 4'd2;
+    localparam MUX_SEL_HI        = 4'd3;
+    localparam COMPUTE_EN_OFF    = 4'd4;
+    localparam CLK_CAPTURE_LOW   = 4'd5;
+    localparam CLK_CAPTURE_HI    = 4'd6;
+    localparam DONE              = 4'd7;
 
     always @(posedge CLK) begin
         if (!EN) begin
-            FSM_state   <= IDLE;
-            CHG_EN      <= 0;
-            RST_CAP     <= 0;
-            VDAC_CTRL   <= 0;
-            TDC_EN      <= 0;
-            TDC_COMPUTE <= 0;
-            TDC_RST     <= 0;
-            VTC_EN      <= 0;
-            IMC_DONE    <= 0;
-            delay_cnt   <= 0;
+            if (cyc_one) begin
+                FSM_state   <= IDLE;
+                MUX_SEL      <= 0;
+                COMPUTE_EN     <= 0;
+                CLK_CAPTURE   <= 0;
+                IMC_DONE  <= 0;
+            end
+            else
+                FSM_state   <= MUX_SEL_HI;
+            
         end
-        else begin
-            delay_cnt <= (delay_cnt + 1);   
+        else begin  
             case (FSM_state)
                 IDLE: begin
-                    FSM_state <= TDC_RESET_ON;
-                    delay_cnt <= 0;
-                    IMC_DONE  <= 0;
+                    FSM_state <= COMPUTE_EN_ON;
+                    COMPUTE_EN <= 1;
                 end
 
-                TDC_RESET_ON: begin
-                    TDC_RST   <= 1;
-                    FSM_state <= TDC_RESET_OFF;
-                    delay_cnt <= 0;
+                COMPUTE_EN_ON: begin
+                    CLK_CAPTURE   <= 1;
+                    FSM_state <= CLK_CAPTURE_HI;
                 end
 
-                TDC_RESET_OFF: begin
-                    TDC_RST   <= 0;
-                    FSM_state <= VDAC_ON;
-                    delay_cnt <= 0;
+                CLK_CAPTURE_HI: begin
+                    CLK_CAPTURE   <= 0;
+                    FSM_state <= CLK_CAPTURE_LOW;
+                    IMC_DONE <= 1;
+                    COMPUTE_EN <= 0;
                 end
 
-                VDAC_ON: begin
-                    VDAC_CTRL <= 1;
-                    FSM_state <= CAP_RESET_ON;
-                    delay_cnt <= 0;
+                CLK_CAPTURE_LOW: begin
+                    if (!MUX_SEL) begin
+                        MUX_SEL <= 1;
+                        FSM_state <= MUX_SEL_HI;
+                    end
+                    else begin
+                        FSM_STATE <= COMPUTE_EN_OFF;
+                        MUX_SEL <= 0;
+                    end
                 end
 
-                CAP_RESET_ON: begin
-                    RST_CAP   <= 1;
-                    FSM_state <= CHARGE_ON;
-                    delay_cnt <= 0;
+                MUX_SEL_HI: begin
+                    COMPUTE_EN   <= 1;
+                    FSM_state <= COMPUTE_EN_ON;
                 end
 
-                CHARGE_ON: begin
-                    CHG_EN    <= 1;
-                    FSM_state <= VTC_TDC_ON;
-                    delay_cnt <= 0;
+                COMPUTE_EN_OFF: begin
+                    COMPUTE_EN <= 0;
                 end
 
                 VTC_TDC_ON: begin
