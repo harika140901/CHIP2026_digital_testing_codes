@@ -34,7 +34,7 @@ module IMC_ScanOut_ext(
     output wire CHG_EN,
 
     output reg [2:0]        SCAN_SEL,    // mode selection: 1..6
-    output reg              DONE,
+    output reg              ALL_DONE,
     output wire [479:0]    OUT     //padded with 5 more bits
     );
 
@@ -64,13 +64,14 @@ module IMC_ScanOut_ext(
     localparam ST_DONE                   = 4'd9;
 
     // external IMC module
-    wire IMC_DONE, MUX_SEL;
+    wire IMC_DONE, MUX_SEL, DONE;
 
     IMC_Wrapper external_imc_controller (
         .EN(FSM_state == ST_IMC_START_AND_WAIT),
         .CLK(CLK),
         .cyc_one(compute_cyc_one),
         .IMC_DONE(IMC_DONE),
+        .DONE(DONE),
         .MUX_SEL(MUX_SEL),
 
     );
@@ -98,7 +99,7 @@ module IMC_ScanOut_ext(
             FSM_state <= ST_IDLE;
             IN_EN <= 0;
             CLK_A_load <= 0;
-            DONE <= 0;
+            ALL_DONE <= 0;
             SCAN_SEL <= 3'd3;          
             SCAN_IN <= 0;
             compute_cyc_one <= 1;
@@ -146,14 +147,14 @@ module IMC_ScanOut_ext(
                 end
 
                 ST_NEXT: begin
-                    if (!MUX_SEL) 
+                    if (!MUX_SEL and !DONE) 
                         FSM_state <= ST_IMC_START_AND_WAIT;
                     else
                         FSM_state <= ST_DONE;
                     end
 
                 ST_DONE: begin
-                    DONE <= 1;
+                    ALL_DONE <= 1;
                     IN_EN <= 0;
                     CLK_A_load <= 0;
                 end
