@@ -63,7 +63,8 @@
 #define XIN_SC_QUADV        8
 #define XIN_SC_UNITV        9
 
-#define MAX_SCAN_LEN 1164
+// Set MAX to cover WL scan chain (1536 bits)
+#define MAX_SCAN_LEN 1536
 #define NUM_WL 1164
 
 //Define signal index for MODE_SETIING_AXI
@@ -109,8 +110,9 @@ struct SM_DATA{
 	u8 mode_default_signal_values[32]; //Default signal values for startup MODE_AXI
 
 	// to guarantee 32-byte cache-line alignment
-	u8 dma_scanout_buffer[148] __attribute__((aligned(32))); // floor((MAX_SCAN_LEN+31)/32)*4 Data is saved into bits
-	u8 dma_scan_in_buffer[148] __attribute__((aligned(32)));
+	// DMA buffers must cover the largest scan chain: 1536 bits = 192 bytes
+	u8 dma_scanout_buffer[192] __attribute__((aligned(32)));
+	u8 dma_scan_in_buffer[192] __attribute__((aligned(32)));
 	// 360 signed 10-bit IMC outputs = 3600 bits = 450 bytes.
 	// Padded to 3616 bits (452 bytes) for 32-bit DMA transfers.
 	u8 dma_imcout_buffer[452]  __attribute__((aligned(32)));
