@@ -28,7 +28,7 @@ module IMC_Wrapper (
                 FSM_state   <= IDLE;
                 MUX_SEL      <= 0;
             end
-            elif (~cyc_one && ~MUX_SEL) begin
+            else if (~cyc_one && ~MUX_SEL) begin
                 DONE <= 1;
             end
             else begin
