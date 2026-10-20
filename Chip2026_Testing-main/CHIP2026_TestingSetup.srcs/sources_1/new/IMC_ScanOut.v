@@ -170,7 +170,6 @@ module IMC_ScanOut(
                     IN_EN <= 0;
                     FSM_state <= ST_SCAN_OUT;
                     end
-                end
 
                 ST_SCAN_OUT: begin
                     if (submodule_scan_done) begin
