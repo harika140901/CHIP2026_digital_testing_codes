@@ -2,7 +2,7 @@
 //Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-//Date        : Wed Oct 21 13:41:45 2026
+//Date        : Sat Oct 24 12:30:24 2026
 //Host        : lappy running 64-bit major release  (build 9200)
 //Command     : generate_target design_1_wrapper.bd
 //Design      : design_1_wrapper
@@ -34,9 +34,9 @@ module design_1_wrapper
     FIXED_IO_ps_srstb,
     FMC_B16,
     FMC_B17,
-    FMC_B18,
     FMC_B19,
     FMC_B20,
+    FMC_B21,
     FMC_B22,
     FMC_C17,
     FMC_C18,
@@ -97,9 +97,9 @@ module design_1_wrapper
   inout FIXED_IO_ps_srstb;
   input FMC_B16;
   input FMC_B17;
-  input FMC_B18;
   output FMC_B19;
   output FMC_B20;
+  input FMC_B21;
   output FMC_B22;
   output FMC_C17;
   output FMC_C18;
@@ -161,9 +161,9 @@ module design_1_wrapper
   wire FIXED_IO_ps_srstb;
   wire FMC_B16;
   wire FMC_B17;
-  wire FMC_B18;
   wire FMC_B19;
   wire FMC_B20;
+  wire FMC_B21;
   wire FMC_B22;
   wire FMC_C17;
   wire FMC_C18;
@@ -226,9 +226,9 @@ module design_1_wrapper
         .FIXED_IO_ps_srstb(FIXED_IO_ps_srstb),
         .FMC_B16(FMC_B16),
         .FMC_B17(FMC_B17),
-        .FMC_B18(FMC_B18),
         .FMC_B19(FMC_B19),
         .FMC_B20(FMC_B20),
+        .FMC_B21(FMC_B21),
         .FMC_B22(FMC_B22),
         .FMC_C17(FMC_C17),
         .FMC_C18(FMC_C18),

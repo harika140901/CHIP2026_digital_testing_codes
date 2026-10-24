@@ -1,185 +1,190 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"0.825028",
-   "Default View_TopLeft":"993,-183",
+   "Default View_Layers":"/processing_system7_0_FCLK_CLK0:true|/proc_sys_reset_0_peripheral_aresetn:true|/Verilog_Controller_0_DFF_RST:true|/processing_system7_0_FCLK_RESET0_N:true|",
+   "Default View_ScaleFactor":"0.197151",
+   "Default View_TopLeft":"-1461,0",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
    "ExpandedHierarchyInLayout":"",
    "commentid":"",
    "guistr":"# # String gsaved with Nlview 7.8.0 2024-04-26 e1825d835c VDI=44 GEI=38 GUI=JA:21.0
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -lvl 5 -x 2120 -y 80 -defaultsOSRD -top
-preplace port FIXED_IO -pg 1 -lvl 6 -x 2760 -y 180 -defaultsOSRD
-preplace port port-id_FMC_L21 -pg 1 -lvl 6 -x 2760 -y 510 -defaultsOSRD
-preplace port port-id_FMC_C20 -pg 1 -lvl 6 -x 2760 -y 720 -defaultsOSRD
-preplace port port-id_FMC_L22 -pg 1 -lvl 6 -x 2760 -y 540 -defaultsOSRD
-preplace port port-id_FMC_R19 -pg 1 -lvl 6 -x 2760 -y 570 -defaultsOSRD
-preplace port port-id_FMC_T19 -pg 1 -lvl 6 -x 2760 -y 600 -defaultsOSRD
-preplace port port-id_FMC_K19 -pg 1 -lvl 6 -x 2760 -y 630 -defaultsOSRD
-preplace port port-id_FMC_K20 -pg 1 -lvl 6 -x 2760 -y 660 -defaultsOSRD
-preplace port port-id_FMC_D20 -pg 1 -lvl 6 -x 2760 -y 690 -defaultsOSRD
-preplace port port-id_FMC_E21 -pg 1 -lvl 6 -x 2760 -y 750 -defaultsOSRD
-preplace port port-id_FMC_D21 -pg 1 -lvl 6 -x 2760 -y 780 -defaultsOSRD
-preplace port port-id_FMC_N19 -pg 1 -lvl 6 -x 2760 -y 810 -defaultsOSRD
-preplace port port-id_FMC_N20 -pg 1 -lvl 6 -x 2760 -y 840 -defaultsOSRD
-preplace port port-id_FMC_J18 -pg 1 -lvl 6 -x 2760 -y 870 -defaultsOSRD
-preplace port port-id_FMC_K18 -pg 1 -lvl 6 -x 2760 -y 900 -defaultsOSRD
-preplace port port-id_FMC_R20 -pg 1 -lvl 6 -x 2760 -y 930 -defaultsOSRD
-preplace port port-id_FMC_R21 -pg 1 -lvl 6 -x 2760 -y 960 -defaultsOSRD
-preplace port port-id_FMC_L17 -pg 1 -lvl 6 -x 2760 -y 990 -defaultsOSRD
-preplace port port-id_FMC_M17 -pg 1 -lvl 6 -x 2760 -y 1020 -defaultsOSRD
-preplace port port-id_FMC_B19 -pg 1 -lvl 6 -x 2760 -y 1050 -defaultsOSRD
-preplace port port-id_FMC_B20 -pg 1 -lvl 6 -x 2760 -y 1080 -defaultsOSRD
-preplace port port-id_FMC_E15 -pg 1 -lvl 6 -x 2760 -y 1110 -defaultsOSRD
-preplace port port-id_FMC_D15 -pg 1 -lvl 6 -x 2760 -y 1140 -defaultsOSRD
-preplace port port-id_FMC_F18 -pg 1 -lvl 6 -x 2760 -y 1170 -defaultsOSRD
-preplace port port-id_FMC_E18 -pg 1 -lvl 6 -x 2760 -y 1200 -defaultsOSRD
-preplace port port-id_FMC_M19 -pg 1 -lvl 6 -x 2760 -y 1230 -defaultsOSRD
-preplace port port-id_FMC_M20 -pg 1 -lvl 6 -x 2760 -y 1260 -defaultsOSRD
-preplace port port-id_FMC_N22 -pg 1 -lvl 6 -x 2760 -y 1290 -defaultsOSRD
-preplace port port-id_FMC_P22 -pg 1 -lvl 6 -x 2760 -y 1320 -defaultsOSRD
-preplace port port-id_FMC_J21 -pg 1 -lvl 6 -x 2760 -y 1350 -defaultsOSRD
-preplace port port-id_FMC_J22 -pg 1 -lvl 6 -x 2760 -y 1380 -defaultsOSRD
-preplace port port-id_FMC_G20 -pg 1 -lvl 6 -x 2760 -y 1410 -defaultsOSRD
-preplace port port-id_FMC_G21 -pg 1 -lvl 6 -x 2760 -y 1440 -defaultsOSRD
-preplace port port-id_FMC_G19 -pg 1 -lvl 6 -x 2760 -y 1470 -defaultsOSRD
-preplace port port-id_FMC_F19 -pg 1 -lvl 6 -x 2760 -y 1500 -defaultsOSRD
-preplace port port-id_FMC_D22 -pg 1 -lvl 6 -x 2760 -y 1530 -defaultsOSRD
-preplace port port-id_FMC_C22 -pg 1 -lvl 6 -x 2760 -y 1560 -defaultsOSRD
-preplace port port-id_FMC_B22 -pg 1 -lvl 6 -x 2760 -y 1590 -defaultsOSRD
-preplace port port-id_FMC_C17 -pg 1 -lvl 6 -x 2760 -y 1620 -defaultsOSRD
-preplace port port-id_FMC_C18 -pg 1 -lvl 6 -x 2760 -y 1650 -defaultsOSRD
-preplace port port-id_FMC_B16 -pg 1 -lvl 6 -x 2760 -y 420 -defaultsOSRD -right
-preplace port port-id_FMC_B17 -pg 1 -lvl 6 -x 2760 -y 450 -defaultsOSRD -right
-preplace port port-id_FMC_B18 -pg 1 -lvl 6 -x 2760 -y 480 -defaultsOSRD -right
-preplace inst processing_system7_0 -pg 1 -lvl 5 -x 2310 -y 240 -defaultsOSRD
-preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 220 -y 1270 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 2 -x 840 -y 1420 -defaultsOSRD
-preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1420 -y 660 -defaultsOSRD
-preplace inst axi_dma_0 -pg 1 -lvl 3 -x 1420 -y 260 -defaultsOSRD
-preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1420 -y 1330 -defaultsOSRD
-preplace inst smartconnect_0 -pg 1 -lvl 4 -x 1760 -y 230 -defaultsOSRD
-preplace inst DIG_DEBUG_AXI_OUT_BUS_0 -pg 1 -lvl 3 -x 1420 -y 1470 -defaultsOSRD
-preplace inst DIG_DEBUG_AXI_OUT_BUS_1 -pg 1 -lvl 3 -x 1420 -y 1610 -defaultsOSRD
-preplace inst xlconcat_0 -pg 1 -lvl 3 -x 1420 -y 990 -defaultsOSRD
-preplace inst SCAN_MODE_SETTINGS_AXI_BUS -pg 1 -lvl 3 -x 1420 -y 480 -defaultsOSRD
-preplace inst DIG_AXI_OUT_BUS -pg 1 -lvl 3 -x 1420 -y 1120 -defaultsOSRD
-preplace inst Unbundle_AXI_Bus_0 -pg 1 -lvl 1 -x 220 -y 860 -defaultsOSRD
-preplace inst TO_FMC_0 -pg 1 -lvl 5 -x 2310 -y 1100 -defaultsOSRD
-preplace inst Verilog_Controller_0 -pg 1 -lvl 2 -x 840 -y 820 -defaultsOSRD
-preplace netloc TO_FMC_0_DIG_AXI_OUT_0 1 1 5 630 1120 1190 1210 NJ 1210 1920J 1570 2550
-preplace netloc TO_FMC_0_DIG_DEBUG_AXI_OUT_0 1 3 3 NJ 1480 1890J 1580 2540
-preplace netloc TO_FMC_0_DIG_DEBUG_AXI_OUT_1 1 3 3 NJ 1620 NJ 1620 2530
-preplace netloc TO_FMC_0_FMC_B19 1 5 1 NJ 1050
-preplace netloc TO_FMC_0_FMC_B20 1 5 1 2740J 1070n
-preplace netloc TO_FMC_0_FMC_B22 1 5 1 2580J 1410n
-preplace netloc TO_FMC_0_FMC_C20 1 5 1 2650J 720n
-preplace netloc TO_FMC_0_FMC_C22 1 5 1 2590J 1390n
-preplace netloc TO_FMC_0_FMC_D15 1 5 1 2730J 1110n
-preplace netloc TO_FMC_0_FMC_D20 1 5 1 2640J 690n
-preplace netloc TO_FMC_0_FMC_D21 1 5 1 2670J 780n
-preplace netloc TO_FMC_0_FMC_D22 1 5 1 2600J 1370n
-preplace netloc TO_FMC_0_FMC_E15 1 5 1 2740J 1090n
-preplace netloc TO_FMC_0_FMC_E18 1 5 1 2710J 1150n
-preplace netloc TO_FMC_0_FMC_E21 1 5 1 2660J 750n
-preplace netloc TO_FMC_0_FMC_F18 1 5 1 2720J 1130n
-preplace netloc TO_FMC_0_FMC_F19 1 5 1 2610J 1350n
-preplace netloc TO_FMC_0_FMC_G19 1 5 1 2620J 1330n
-preplace netloc TO_FMC_0_FMC_G20 1 5 1 2640J 1290n
-preplace netloc TO_FMC_0_FMC_G21 1 5 1 2630J 1310n
-preplace netloc TO_FMC_0_FMC_J18 1 5 1 2700J 870n
-preplace netloc TO_FMC_0_FMC_J21 1 5 1 2660J 1250n
-preplace netloc TO_FMC_0_FMC_J22 1 5 1 2650J 1270n
-preplace netloc TO_FMC_0_FMC_K18 1 5 1 2710J 900n
-preplace netloc TO_FMC_0_FMC_K19 1 5 1 2610J 630n
-preplace netloc TO_FMC_0_FMC_K20 1 5 1 2630J 660n
-preplace netloc TO_FMC_0_FMC_L17 1 5 1 2740J 990n
-preplace netloc TO_FMC_0_FMC_L21 1 5 1 2550J 510n
-preplace netloc TO_FMC_0_FMC_L22 1 5 1 2570J 540n
-preplace netloc TO_FMC_0_FMC_M17 1 5 1 2550J 1020n
-preplace netloc TO_FMC_0_FMC_M19 1 5 1 2700J 1170n
-preplace netloc TO_FMC_0_FMC_M20 1 5 1 2690J 1190n
-preplace netloc TO_FMC_0_FMC_N19 1 5 1 2680J 810n
-preplace netloc TO_FMC_0_FMC_N20 1 5 1 2690J 840n
-preplace netloc TO_FMC_0_FMC_N22 1 5 1 2680J 1210n
-preplace netloc TO_FMC_0_FMC_P22 1 5 1 2670J 1230n
-preplace netloc TO_FMC_0_FMC_R19 1 5 1 2580J 570n
-preplace netloc TO_FMC_0_FMC_R20 1 5 1 2720J 930n
-preplace netloc TO_FMC_0_FMC_R21 1 5 1 2730J 960n
-preplace netloc TO_FMC_0_FMC_T19 1 5 1 2600J 600n
-preplace netloc Unbundle_AXI_Bus_0_BL_PCHG_C 1 1 1 430 640n
-preplace netloc Unbundle_AXI_Bus_0_CLK_SA_C 1 1 1 520 660n
-preplace netloc Unbundle_AXI_Bus_0_DFF_RST_C 1 1 1 540 860n
-preplace netloc Unbundle_AXI_Bus_0_IN_EN_C 1 1 1 500 800n
-preplace netloc Unbundle_AXI_Bus_0_SA_EN_C 1 1 1 420 620n
-preplace netloc Unbundle_AXI_Bus_0_SCN_IN_C 1 1 1 510 820n
-preplace netloc Unbundle_AXI_Bus_0_SCN_SEL_C 1 1 1 470 740n
-preplace netloc Unbundle_AXI_Bus_0_WL_EN_C 1 1 1 410 600n
-preplace netloc Verilog_Controller_0_BL_PCHG 1 2 3 1180J 750 NJ 750 1960
-preplace netloc Verilog_Controller_0_CLK_SA 1 2 3 1050J 560 NJ 560 2040
-preplace netloc Verilog_Controller_0_DFF_RST 1 2 3 NJ 880 NJ 880 1920
-preplace netloc Verilog_Controller_0_IN_EN 1 2 3 NJ 820 NJ 820 2000
-preplace netloc Verilog_Controller_0_SA_EN 1 2 3 1060J 570 NJ 570 2010
-preplace netloc Verilog_Controller_0_SCAN_DONE_FLAGS 1 2 1 1260 1000n
-preplace netloc Verilog_Controller_0_SCN_IN 1 2 3 NJ 840 NJ 840 1990
-preplace netloc Verilog_Controller_0_SCN_SEL 1 2 3 NJ 760 NJ 760 2060
-preplace netloc Verilog_Controller_0_WL_EN 1 2 3 1070J 580 NJ 580 1970
-preplace netloc axi_gpio_0_gpio_io_o 1 0 4 30 520 NJ 520 1260J 740 1580
-preplace netloc axi_gpio_1_gpio_io_o 1 0 4 30 1160 NJ 1160 1040J 1240 1580
-preplace netloc axi_gpio_4_gpio_io_o 1 1 3 640 400 NJ 400 1580
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 610 1180 1170 130 1590J
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 1170 580 1130 1200 140 1630 140 2070 400 2570
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 380 NJ 380 NJ 380 NJ 380 NJ 380 2550
-preplace netloc xlconcat_0_dout 1 3 1 1580 990n
-preplace netloc Verilog_Controller_0_WEN 1 2 3 1250J 790 NJ 790 1940
-preplace netloc Verilog_Controller_0_READ_EN 1 2 3 1240J 780 NJ 780 1950
-preplace netloc Verilog_Controller_0_osc_EN 1 2 3 1060 1250 NJ 1250 NJ
-preplace netloc Verilog_Controller_0_capturestart 1 2 3 1090J 1220 NJ 1220 1980
-preplace netloc Verilog_Controller_0_div_ratio 1 2 3 1050J 1230 NJ 1230 1900
-preplace netloc Verilog_Controller_0_SAMPLE_EDGE_TIME 1 2 3 1250J 910 NJ 910 N
-preplace netloc Verilog_Controller_0_CLKA 1 2 3 1090J 770 NJ 770 2050
-preplace netloc Verilog_Controller_0_CLKB 1 2 3 NJ 800 NJ 800 2020
-preplace netloc Verilog_Controller_0_MUX_OUT_PAD 1 2 3 1180 1200 1600J 1090 NJ
-preplace netloc Verilog_Controller_0_CLK_OUT_PAD 1 2 3 1260 920 NJ 920 1890J
-preplace netloc Verilog_Controller_0_CONTROL_EN 1 2 3 1190 900 NJ 900 1910J
-preplace netloc Verilog_Controller_0_CS_B 1 2 3 1230J 810 NJ 810 2030
-preplace netloc Verilog_Controller_0_COMPUTE_EN 1 2 3 NJ 860 NJ 860 1930
-preplace netloc TO_FMC_0_FMC_C17 1 5 1 2570J 1430n
-preplace netloc TO_FMC_0_FMC_C18 1 5 1 2560J 1450n
-preplace netloc Unbundle_AXI_Bus_0_WEN_C 1 1 1 450 700n
-preplace netloc Unbundle_AXI_Bus_0_READ_EN_C 1 1 1 440 680n
-preplace netloc Unbundle_AXI_Bus_0_CS_B_C 1 1 1 460 720n
-preplace netloc Unbundle_AXI_Bus_0_CLKA_C 1 1 1 480 760n
-preplace netloc Unbundle_AXI_Bus_0_CLKB_C 1 1 1 490 780n
-preplace netloc Unbundle_AXI_Bus_0_COMPUTE_EN_C 1 1 1 530 840n
-preplace netloc Unbundle_AXI_Bus_0_MUX_OUT_PAD_C 1 1 1 550 880n
-preplace netloc Unbundle_AXI_Bus_0_CONTROL_EN_C 1 1 1 560 900n
-preplace netloc Unbundle_AXI_Bus_0_CLK_OUT_PAD_C 1 1 1 570 920n
-preplace netloc Unbundle_AXI_Bus_0_osc_EN_C 1 1 1 580 940n
-preplace netloc Unbundle_AXI_Bus_0_capturestart_C 1 1 1 590 960n
-preplace netloc Unbundle_AXI_Bus_0_div_ratio_C 1 1 1 600 980n
-preplace netloc Unbundle_AXI_Bus_0_SAMPLE_EDGE_TIME_C 1 1 1 610 1000n
-preplace netloc FMC_B16_1 1 4 2 2070 420 NJ
-preplace netloc FMC_B17_1 1 4 2 2090 450 NJ
-preplace netloc FMC_B18_1 1 4 2 2080 480 NJ
-preplace netloc Verilog_Controller_0_out 1 2 1 1040 230n
-preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 3 630 120 NJ 120 1580
+preplace port DDR -pg 1 -lvl 5 -x 1820 -y 80 -defaultsOSRD -top
+preplace port FIXED_IO -pg 1 -lvl 6 -x 2470 -y 180 -defaultsOSRD
+preplace port port-id_FMC_L21 -pg 1 -lvl 6 -x 2470 -y 380 -defaultsOSRD
+preplace port port-id_FMC_C20 -pg 1 -lvl 6 -x 2470 -y 590 -defaultsOSRD
+preplace port port-id_FMC_L22 -pg 1 -lvl 6 -x 2470 -y 410 -defaultsOSRD
+preplace port port-id_FMC_R19 -pg 1 -lvl 6 -x 2470 -y 440 -defaultsOSRD
+preplace port port-id_FMC_T19 -pg 1 -lvl 6 -x 2470 -y 470 -defaultsOSRD
+preplace port port-id_FMC_K19 -pg 1 -lvl 6 -x 2470 -y 500 -defaultsOSRD
+preplace port port-id_FMC_K20 -pg 1 -lvl 6 -x 2470 -y 530 -defaultsOSRD
+preplace port port-id_FMC_D20 -pg 1 -lvl 6 -x 2470 -y 560 -defaultsOSRD
+preplace port port-id_FMC_E21 -pg 1 -lvl 6 -x 2470 -y 620 -defaultsOSRD
+preplace port port-id_FMC_D21 -pg 1 -lvl 6 -x 2470 -y 650 -defaultsOSRD
+preplace port port-id_FMC_N19 -pg 1 -lvl 6 -x 2470 -y 680 -defaultsOSRD
+preplace port port-id_FMC_N20 -pg 1 -lvl 6 -x 2470 -y 710 -defaultsOSRD
+preplace port port-id_FMC_J18 -pg 1 -lvl 6 -x 2470 -y 740 -defaultsOSRD
+preplace port port-id_FMC_K18 -pg 1 -lvl 6 -x 2470 -y 770 -defaultsOSRD
+preplace port port-id_FMC_R20 -pg 1 -lvl 6 -x 2470 -y 800 -defaultsOSRD
+preplace port port-id_FMC_R21 -pg 1 -lvl 6 -x 2470 -y 830 -defaultsOSRD
+preplace port port-id_FMC_L17 -pg 1 -lvl 6 -x 2470 -y 860 -defaultsOSRD
+preplace port port-id_FMC_M17 -pg 1 -lvl 6 -x 2470 -y 890 -defaultsOSRD
+preplace port port-id_FMC_B19 -pg 1 -lvl 6 -x 2470 -y 920 -defaultsOSRD
+preplace port port-id_FMC_B20 -pg 1 -lvl 6 -x 2470 -y 950 -defaultsOSRD
+preplace port port-id_FMC_E15 -pg 1 -lvl 6 -x 2470 -y 980 -defaultsOSRD
+preplace port port-id_FMC_D15 -pg 1 -lvl 6 -x 2470 -y 1010 -defaultsOSRD
+preplace port port-id_FMC_F18 -pg 1 -lvl 6 -x 2470 -y 1040 -defaultsOSRD
+preplace port port-id_FMC_E18 -pg 1 -lvl 6 -x 2470 -y 1070 -defaultsOSRD
+preplace port port-id_FMC_M19 -pg 1 -lvl 6 -x 2470 -y 1100 -defaultsOSRD
+preplace port port-id_FMC_M20 -pg 1 -lvl 6 -x 2470 -y 1130 -defaultsOSRD
+preplace port port-id_FMC_N22 -pg 1 -lvl 6 -x 2470 -y 1160 -defaultsOSRD
+preplace port port-id_FMC_P22 -pg 1 -lvl 6 -x 2470 -y 1190 -defaultsOSRD
+preplace port port-id_FMC_J21 -pg 1 -lvl 6 -x 2470 -y 1220 -defaultsOSRD
+preplace port port-id_FMC_J22 -pg 1 -lvl 6 -x 2470 -y 1250 -defaultsOSRD
+preplace port port-id_FMC_G20 -pg 1 -lvl 6 -x 2470 -y 1280 -defaultsOSRD
+preplace port port-id_FMC_G21 -pg 1 -lvl 6 -x 2470 -y 1310 -defaultsOSRD
+preplace port port-id_FMC_G19 -pg 1 -lvl 6 -x 2470 -y 1340 -defaultsOSRD
+preplace port port-id_FMC_F19 -pg 1 -lvl 6 -x 2470 -y 1370 -defaultsOSRD
+preplace port port-id_FMC_D22 -pg 1 -lvl 6 -x 2470 -y 1400 -defaultsOSRD
+preplace port port-id_FMC_C22 -pg 1 -lvl 6 -x 2470 -y 1430 -defaultsOSRD
+preplace port port-id_FMC_B22 -pg 1 -lvl 6 -x 2470 -y 1460 -defaultsOSRD
+preplace port port-id_FMC_C17 -pg 1 -lvl 6 -x 2470 -y 1490 -defaultsOSRD
+preplace port port-id_FMC_C18 -pg 1 -lvl 6 -x 2470 -y 1520 -defaultsOSRD
+preplace port port-id_FMC_B16 -pg 1 -lvl 6 -x 2470 -y 320 -defaultsOSRD -right
+preplace port port-id_FMC_B17 -pg 1 -lvl 6 -x 2470 -y 350 -defaultsOSRD -right
+preplace port port-id_FMC_B21 -pg 1 -lvl 0 -x 0 -y 580 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -x 2010 -y 240 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 1 -x 220 -y 1290 -defaultsOSRD
+preplace inst axi_gpio_0 -pg 1 -lvl 3 -x 1190 -y 660 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 3 -x 1190 -y 260 -defaultsOSRD
+preplace inst axi_gpio_1 -pg 1 -lvl 3 -x 1190 -y 1400 -defaultsOSRD
+preplace inst smartconnect_0 -pg 1 -lvl 4 -x 1510 -y 230 -defaultsOSRD
+preplace inst DIG_DEBUG_AXI_OUT_BUS_0 -pg 1 -lvl 3 -x 1190 -y 1540 -defaultsOSRD
+preplace inst DIG_DEBUG_AXI_OUT_BUS_1 -pg 1 -lvl 3 -x 1190 -y 1680 -defaultsOSRD
+preplace inst xlconcat_0 -pg 1 -lvl 3 -x 1190 -y 1090 -defaultsOSRD
+preplace inst SCAN_MODE_SETTINGS_AXI_BUS -pg 1 -lvl 3 -x 1190 -y 480 -defaultsOSRD
+preplace inst DIG_AXI_OUT_BUS -pg 1 -lvl 3 -x 1190 -y 1240 -defaultsOSRD
+preplace inst Unbundle_AXI_Bus_0 -pg 1 -lvl 1 -x 220 -y 880 -defaultsOSRD
+preplace inst TO_FMC_0 -pg 1 -lvl 5 -x 2010 -y 970 -defaultsOSRD
+preplace inst Verilog_Controller_0 -pg 1 -lvl 2 -x 680 -y 880 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 2 -x 680 -y 1450 -defaultsOSRD
+preplace netloc FMC_B16_1 1 4 2 1780 420 2270J
+preplace netloc FMC_B17_1 1 4 2 1790 430 2280J
+preplace netloc FMC_B18_1 1 0 5 NJ 580 NJ 580 1000J 740 NJ 740 1640J
+preplace netloc TO_FMC_0_DIG_AXI_OUT_0 1 1 5 480 1180 1030 1020 NJ 1020 1710J 410 2230
+preplace netloc TO_FMC_0_DIG_DEBUG_AXI_OUT_0 1 3 3 NJ 1550 NJ 1550 2230
+preplace netloc TO_FMC_0_DIG_DEBUG_AXI_OUT_1 1 3 3 NJ 1690 NJ 1690 2240
+preplace netloc TO_FMC_0_FMC_B19 1 5 1 NJ 920
+preplace netloc TO_FMC_0_FMC_B20 1 5 1 2450J 940n
+preplace netloc TO_FMC_0_FMC_B22 1 5 1 2270J 1280n
+preplace netloc TO_FMC_0_FMC_C17 1 5 1 2260J 1300n
+preplace netloc TO_FMC_0_FMC_C18 1 5 1 2250J 1320n
+preplace netloc TO_FMC_0_FMC_C20 1 5 1 2360J 590n
+preplace netloc TO_FMC_0_FMC_C22 1 5 1 2280J 1260n
+preplace netloc TO_FMC_0_FMC_D15 1 5 1 2440J 980n
+preplace netloc TO_FMC_0_FMC_D20 1 5 1 2350J 560n
+preplace netloc TO_FMC_0_FMC_D21 1 5 1 2380J 650n
+preplace netloc TO_FMC_0_FMC_D22 1 5 1 2290J 1240n
+preplace netloc TO_FMC_0_FMC_E15 1 5 1 2450J 960n
+preplace netloc TO_FMC_0_FMC_E18 1 5 1 2420J 1020n
+preplace netloc TO_FMC_0_FMC_E21 1 5 1 2370J 620n
+preplace netloc TO_FMC_0_FMC_F18 1 5 1 2430J 1000n
+preplace netloc TO_FMC_0_FMC_F19 1 5 1 2300J 1220n
+preplace netloc TO_FMC_0_FMC_G19 1 5 1 2310J 1200n
+preplace netloc TO_FMC_0_FMC_G20 1 5 1 2330J 1160n
+preplace netloc TO_FMC_0_FMC_G21 1 5 1 2320J 1180n
+preplace netloc TO_FMC_0_FMC_J18 1 5 1 2410J 740n
+preplace netloc TO_FMC_0_FMC_J21 1 5 1 2360J 1120n
+preplace netloc TO_FMC_0_FMC_J22 1 5 1 2340J 1140n
+preplace netloc TO_FMC_0_FMC_K18 1 5 1 2420J 770n
+preplace netloc TO_FMC_0_FMC_K19 1 5 1 2330J 500n
+preplace netloc TO_FMC_0_FMC_K20 1 5 1 2340J 530n
+preplace netloc TO_FMC_0_FMC_L17 1 5 1 2450J 860n
+preplace netloc TO_FMC_0_FMC_L21 1 5 1 2290J 380n
+preplace netloc TO_FMC_0_FMC_L22 1 5 1 2300J 410n
+preplace netloc TO_FMC_0_FMC_M17 1 5 1 2450J 890n
+preplace netloc TO_FMC_0_FMC_M19 1 5 1 2400J 1040n
+preplace netloc TO_FMC_0_FMC_M20 1 5 1 2390J 1060n
+preplace netloc TO_FMC_0_FMC_N19 1 5 1 2390J 680n
+preplace netloc TO_FMC_0_FMC_N20 1 5 1 2400J 710n
+preplace netloc TO_FMC_0_FMC_N22 1 5 1 2380J 1080n
+preplace netloc TO_FMC_0_FMC_P22 1 5 1 2370J 1100n
+preplace netloc TO_FMC_0_FMC_R19 1 5 1 2310J 440n
+preplace netloc TO_FMC_0_FMC_R20 1 5 1 2430J 800n
+preplace netloc TO_FMC_0_FMC_R21 1 5 1 2440J 830n
+preplace netloc TO_FMC_0_FMC_T19 1 5 1 2320J 470n
+preplace netloc Unbundle_AXI_Bus_0_BL_PCHG_C 1 1 1 430 700n
+preplace netloc Unbundle_AXI_Bus_0_CLKA_C 1 1 1 N 820
+preplace netloc Unbundle_AXI_Bus_0_CLKB_C 1 1 1 N 840
+preplace netloc Unbundle_AXI_Bus_0_CLK_OUT_PAD_C 1 1 1 N 980
+preplace netloc Unbundle_AXI_Bus_0_CLK_SA_C 1 1 1 440 720n
+preplace netloc Unbundle_AXI_Bus_0_COMPUTE_EN_C 1 1 1 N 900
+preplace netloc Unbundle_AXI_Bus_0_CONTROL_EN_C 1 1 1 N 960
+preplace netloc Unbundle_AXI_Bus_0_CS_B_C 1 1 1 N 780
+preplace netloc Unbundle_AXI_Bus_0_DFF_RST_C 1 1 1 N 920
+preplace netloc Unbundle_AXI_Bus_0_IN_EN_C 1 1 1 N 860
+preplace netloc Unbundle_AXI_Bus_0_MUX_OUT_PAD_C 1 1 1 N 940
+preplace netloc Unbundle_AXI_Bus_0_READ_EN_C 1 1 1 450 740n
+preplace netloc Unbundle_AXI_Bus_0_SAMPLE_EDGE_TIME_C 1 1 1 N 1060
+preplace netloc Unbundle_AXI_Bus_0_SA_EN_C 1 1 1 420 680n
+preplace netloc Unbundle_AXI_Bus_0_SCN_IN_C 1 1 1 N 880
+preplace netloc Unbundle_AXI_Bus_0_SCN_SEL_C 1 1 1 N 800
+preplace netloc Unbundle_AXI_Bus_0_WEN_C 1 1 1 410 740n
+preplace netloc Unbundle_AXI_Bus_0_WL_EN_C 1 1 1 410 660n
+preplace netloc Unbundle_AXI_Bus_0_capturestart_C 1 1 1 N 1020
+preplace netloc Unbundle_AXI_Bus_0_div_ratio_C 1 1 1 N 1040
+preplace netloc Unbundle_AXI_Bus_0_osc_EN_C 1 1 1 N 1000
+preplace netloc Verilog_Controller_0_BL_PCHG 1 2 3 950J 770 NJ 770 1700
+preplace netloc Verilog_Controller_0_CLKA 1 2 3 NJ 840 NJ 840 N
+preplace netloc Verilog_Controller_0_CLKB 1 2 3 NJ 860 NJ 860 N
+preplace netloc Verilog_Controller_0_CLK_OUT_PAD 1 2 3 900J 980 NJ 980 1680
+preplace netloc Verilog_Controller_0_CLK_SA 1 2 3 930J 780 NJ 780 1750
+preplace netloc Verilog_Controller_0_COMPUTE_EN 1 2 3 NJ 920 NJ 920 N
+preplace netloc Verilog_Controller_0_CONTROL_EN 1 2 3 880J 970 NJ 970 1720
+preplace netloc Verilog_Controller_0_CS_B 1 2 3 880J 810 NJ 810 1770
+preplace netloc Verilog_Controller_0_DFF_RST 1 2 3 NJ 940 NJ 940 N
+preplace netloc Verilog_Controller_0_IN_EN 1 2 3 NJ 880 NJ 880 N
+preplace netloc Verilog_Controller_0_MUX_OUT_PAD 1 2 3 NJ 960 NJ 960 N
+preplace netloc Verilog_Controller_0_READ_EN 1 2 3 900J 800 NJ 800 1690
+preplace netloc Verilog_Controller_0_SAMPLE_EDGE_TIME 1 2 3 970J 1010 NJ 1010 1760
+preplace netloc Verilog_Controller_0_SA_EN 1 2 3 990J 760 NJ 760 1650
+preplace netloc Verilog_Controller_0_SCAN_DONE_FLAGS 1 2 1 N 1100
+preplace netloc Verilog_Controller_0_SCN_IN 1 2 3 NJ 900 NJ 900 N
+preplace netloc Verilog_Controller_0_SCN_SEL 1 2 3 NJ 820 NJ 820 1720
+preplace netloc Verilog_Controller_0_WEN 1 2 3 910J 790 NJ 790 1730
+preplace netloc Verilog_Controller_0_WL_EN 1 2 3 880J 750 NJ 750 1740
+preplace netloc Verilog_Controller_0_capturestart 1 2 3 910J 990 NJ 990 1660
+preplace netloc Verilog_Controller_0_div_ratio 1 2 3 950J 1000 NJ 1000 1670
+preplace netloc Verilog_Controller_0_osc_EN 1 2 3 880 1160 NJ 1160 1770J
+preplace netloc axi_gpio_0_gpio_io_o 1 0 4 30 560 NJ 560 1020J 570 1350
+preplace netloc axi_gpio_1_gpio_io_o 1 0 4 30 1190 NJ 1190 880J 1320 1350
+preplace netloc axi_gpio_4_gpio_io_o 1 1 3 470 550 1030J 560 1350
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 3 410 1210 920 140 1370J
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 30 1390 430 1200 980 380 1380 380 1790 380 2250
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 0 6 20 390 NJ 390 NJ 390 NJ 390 NJ 390 2230
+preplace netloc xlconcat_0_dout 1 3 1 1350 1090n
+preplace netloc Verilog_Controller_0_out 1 2 1 880 230n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 1 3 480 570 1010J 580 1360
 preplace netloc axi_dma_0_M_AXI_MM2S 1 3 1 N 200
 preplace netloc axi_dma_0_M_AXI_S2MM 1 3 1 N 220
-preplace netloc axi_interconnect_0_M00_AXI 1 2 1 1080 210n
-preplace netloc axi_interconnect_0_M01_AXI 1 2 1 1220 640n
-preplace netloc axi_interconnect_0_M02_AXI 1 2 1 1250 1310n
-preplace netloc axi_interconnect_0_M03_AXI 1 2 1 1050 1420n
-preplace netloc axi_interconnect_0_M04_AXI 1 2 1 1040 1440n
-preplace netloc axi_interconnect_0_M05_AXI 1 2 1 1210 460n
-preplace netloc axi_interconnect_0_M06_AXI 1 2 1 1260 1100n
-preplace netloc processing_system7_0_DDR 1 5 1 2550 90n
+preplace netloc axi_interconnect_1_M00_AXI 1 2 1 890 210n
+preplace netloc axi_interconnect_1_M01_AXI 1 2 1 940 640n
+preplace netloc axi_interconnect_1_M02_AXI 1 2 1 1030 1380n
+preplace netloc axi_interconnect_1_M03_AXI 1 2 1 1010 1220n
+preplace netloc axi_interconnect_1_M04_AXI 1 2 1 890 1470n
+preplace netloc axi_interconnect_1_M05_AXI 1 2 1 880 1490n
+preplace netloc axi_interconnect_1_M06_AXI 1 2 1 960 460n
+preplace netloc processing_system7_0_DDR 1 5 1 2230 90n
 preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ 180
-preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 620 390 NJ 390 NJ 390 NJ 390 2580
+preplace netloc processing_system7_0_M_AXI_GP0 1 1 5 460 400 NJ 400 NJ 400 NJ 400 2260
 preplace netloc smartconnect_0_M00_AXI 1 4 1 N 230
-levelinfo -pg 1 -10 220 840 1420 1760 2310 2760
-pagesize -pg 1 -db -bbox -sgen -10 0 2880 1690
+levelinfo -pg 1 0 220 680 1190 1510 2010 2470
+pagesize -pg 1 -db -bbox -sgen -110 0 2590 1760
 "
 }
 {
-   "da_clkrst_cnt":"1",
+   "da_axi4_cnt":"7",
+   "da_clkrst_cnt":"2",
    "da_ps7_cnt":"1"
 }

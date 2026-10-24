@@ -35,8 +35,8 @@ module Verilog_Controller(
     // Scan-Chain Signals
     ////////////////////////////////////////////////////////
     input  [2:0] SCN_SEL_C,
-    input        CLKA_C,
-    input        CLKB_C,
+    input        CLK_A_C,
+    input        CLK_B_C,
     input        IN_EN_C,
     input        SCN_IN_C,
 
@@ -123,8 +123,10 @@ module Verilog_Controller(
 );
 
     wire SCN_OUT = dig_out[0];
-    wire DEBUG_SC_OUT[0] = dig_out[1];
-    wire DEBUG_SC_OUT[1] = dig_out[2];
+    wire [1:0] DEBUG_SC_OUT;
+    
+    assign DEBUG_SC_OUT[0] = dig_out[1];
+    assign DEBUG_SC_OUT[1] = dig_out[2];
 
      wire VERILOG_C_SCN     = scan_mode_setting_in[0];
     wire [2:0] SCN_ID       = scan_mode_setting_in[3:1];
@@ -284,7 +286,7 @@ module Verilog_Controller(
         .CLK(clk),
         .EN(WRITE_SRAM_EN),
         .done(WRITE_SRAM_DONE),
-        .WRITE_EN(WEN_SRAM),
+        .WEN(WEN_SRAM),
         .WL_EN(WLEN_SRAM)
     );
     ////////////////////////////////////////////////////////
@@ -293,7 +295,7 @@ module Verilog_Controller(
 
     wire SCAN_IN_IMC, IN_EN_IMC, CLK_A_IMC, CLK_B_IMC, BANK_SEL_IMC, DFF_RST_IMC, FAST_IMC_DONE, IMC_SCNOUT_DONE, FAST_IMC_DONE;
     wire SCAN_SEL_IMC;
-    wire COMPUTE_EN, MUX_SEL, CLK_CAPTURE;
+    wire COMPUTE_EN_IMC, MUX_SEL_IMC, CLK_CAPTURE_IMC;
     assign FAST_IMC_DONE = (Ext_IMC_EN) ? EXT_IMC_DONE : ((FAST_IMC_EN) ? IMC_SCNOUT_DONE : imc_done_scan_out);
     IMC_ScanOut u1_imc_scnout (
         .CLK(clk),
@@ -310,7 +312,7 @@ module Verilog_Controller(
         .DONE(IMC_SCNOUT_DONE),
         .OUT(IMC_OUT_BUFF),
         // Compute signals for external IMC Mode
-        .COMPUTE_EN(COMPUTE_EN), .MUX_SEL(MUX_SEL), .CLK_CAPTURE(CLK_CAPTURE)
+        .COMPUTE_EN(COMPUTE_EN_IMC), .MUX_SEL(MUX_SEL_IMC), .CLK_CAPTURE(CLK_CAPTURE_IMC)
     );
     
     wire COMPUTE_EN0, MUX_SEL0, CLK_CAPTURE0;
@@ -350,9 +352,9 @@ module Verilog_Controller(
     assign SCN_IN = (FAST_IMC_EN == 1) ? SCAN_IN_IMC : (VERILOG_C_SCN == 1) ? SCAN_IN_VER : SCN_IN_C;
     
     // Compute Signals
-    assign COMPUTE_EN  = (TOPS_EN) ? COMPUTE_EN_TOPS : ((Ext_IMC_EN) ? COMPUTE_EN0 : (IMC_Mode == 1) ? COMPUTE_EN :  COMPUTE_EN_C);
-    assign MUX_OUT_PAD   = (TOPS_EN) ? 1'b0 : ((Ext_IMC_EN) ? MUX_SEL0 : (IMC_Mode == 1) ? MUX_SEL : MUX_SEL_C);
-    assign CLK_OUT_PAD   = (Ext_IMC_EN) ? CLK_CAPTURE0 : (IMC_Mode == 1) ? CLK_CAPTURE :CLK_CAPTURE_C;
+    assign COMPUTE_EN  = (TOPS_EN) ? COMPUTE_EN_TOPS : ((Ext_IMC_EN) ? COMPUTE_EN0 : (IMC_Mode == 1) ? COMPUTE_EN_IMC :  COMPUTE_EN_C);
+    assign MUX_OUT_PAD   = (TOPS_EN) ? 1'b0 : ((Ext_IMC_EN) ? MUX_SEL0 : (IMC_Mode == 1) ? MUX_SEL_IMC : MUX_OUT_PAD_C);
+    assign CLK_OUT_PAD   = (Ext_IMC_EN) ? CLK_CAPTURE0 : (IMC_Mode == 1) ? CLK_CAPTURE_IMC :CLK_OUT_PAD_C;
     
     assign DFF_RST =  (TOPS_EN) ? DFF_RST_TOPS : ((~IMC_Mode && FAST_IMC_EN) ? DFF_RST_IMC : DFF_RST_C);
     assign CONTROL_EN  = (TOPS_EN) ? CONTROL_EN_TOPS : CONTROL_EN_C;

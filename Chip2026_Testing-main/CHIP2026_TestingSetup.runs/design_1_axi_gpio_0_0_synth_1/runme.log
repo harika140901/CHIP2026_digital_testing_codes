@@ -1,0 +1,18 @@
+
+*** Running vivado
+    with args -log design_1_axi_gpio_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_gpio_0_0.tcl
+
+
+
+****** Vivado v2025.1 (64-bit)
+  **** SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+  **** IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+  **** SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+  **** Start of session at: Sat Oct 24 10:44:54 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_axi_gpio_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:12 . Memory (MB): peak = 507.098 ; gain = 213.812
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP design_1_axi_gpio_0_0, cache-ID = a2cb32ab7c98498d.
+INFO: [Common 17-206] Exiting Vivado at Sat Oct 24 10:45:16 2026...

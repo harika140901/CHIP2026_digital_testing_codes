@@ -4,57 +4,57 @@
 # XDC: new/constraints_v1.xdc
 
 # Block Designs: bd/design_1/design_1.bd
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1 || ORIG_REF_NAME==design_1} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1 || ORIG_REF_NAME==design_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_processing_system7_0_0/design_1_processing_system7_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_0 || ORIG_REF_NAME==design_1_processing_system7_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_processing_system7_0_0 || ORIG_REF_NAME==design_1_processing_system7_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_proc_sys_reset_0_0/design_1_proc_sys_reset_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_proc_sys_reset_0_0 || ORIG_REF_NAME==design_1_proc_sys_reset_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_xbar_0/design_1_xbar_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xbar_0 || ORIG_REF_NAME==design_1_xbar_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_axi_interconnect_0_0/design_1_axi_interconnect_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_interconnect_0_0 || ORIG_REF_NAME==design_1_axi_interconnect_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_Verilog_Controller_0_0/design_1_Verilog_Controller_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_Verilog_Controller_0_0 || ORIG_REF_NAME==design_1_Verilog_Controller_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_Unbundle_AXI_Bus_0_0/design_1_Unbundle_AXI_Bus_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_Unbundle_AXI_Bus_0_0 || ORIG_REF_NAME==design_1_Unbundle_AXI_Bus_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_proc_sys_reset_0_0 || ORIG_REF_NAME==design_1_proc_sys_reset_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_gpio_0_0/design_1_axi_gpio_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_0 || ORIG_REF_NAME==design_1_axi_gpio_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_0 || ORIG_REF_NAME==design_1_axi_gpio_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_dma_0_0/design_1_axi_dma_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_dma_0_0 || ORIG_REF_NAME==design_1_axi_dma_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_dma_0_0 || ORIG_REF_NAME==design_1_axi_dma_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_gpio_1_0/design_1_axi_gpio_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_1_0 || ORIG_REF_NAME==design_1_axi_gpio_1_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_1_0 || ORIG_REF_NAME==design_1_axi_gpio_1_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_smartconnect_0_0/design_1_smartconnect_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_smartconnect_0_0 || ORIG_REF_NAME==design_1_smartconnect_0_0} -quiet] -quiet
-
-# IP: bd/design_1/ip/design_1_TO_FMC_0_0/design_1_TO_FMC_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_TO_FMC_0_0 || ORIG_REF_NAME==design_1_TO_FMC_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_smartconnect_0_0 || ORIG_REF_NAME==design_1_smartconnect_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_gpio_2_0/design_1_axi_gpio_2_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_2_0 || ORIG_REF_NAME==design_1_axi_gpio_2_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_2_0 || ORIG_REF_NAME==design_1_axi_gpio_2_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_gpio_2_1/design_1_axi_gpio_2_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_2_1 || ORIG_REF_NAME==design_1_axi_gpio_2_1} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_2_1 || ORIG_REF_NAME==design_1_axi_gpio_2_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_xlconcat_0_0/design_1_xlconcat_0_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_xlconcat_0_0 || ORIG_REF_NAME==design_1_xlconcat_0_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_xlconcat_0_0 || ORIG_REF_NAME==design_1_xlconcat_0_0} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_1 || ORIG_REF_NAME==design_1_axi_gpio_0_1} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_gpio_0_1 || ORIG_REF_NAME==design_1_axi_gpio_0_1} -quiet] -quiet
 
 # IP: bd/design_1/ip/design_1_DIG_DEBUG_AXI_OUT_BUS_1_0/design_1_DIG_DEBUG_AXI_OUT_BUS_1_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_DIG_DEBUG_AXI_OUT_BUS_1_0 || ORIG_REF_NAME==design_1_DIG_DEBUG_AXI_OUT_BUS_1_0} -quiet] -quiet
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_DIG_DEBUG_AXI_OUT_BUS_1_0 || ORIG_REF_NAME==design_1_DIG_DEBUG_AXI_OUT_BUS_1_0} -quiet] -quiet
 
-# IP: bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0.xci
-set_property DONT_TOUCH TRUE [get_cells -hier -filter {REF_NAME==design_1_auto_pc_0 || ORIG_REF_NAME==design_1_auto_pc_0} -quiet] -quiet
+# IP: bd/design_1/ip/design_1_Unbundle_AXI_Bus_0_0/design_1_Unbundle_AXI_Bus_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_Unbundle_AXI_Bus_0_0 || ORIG_REF_NAME==design_1_Unbundle_AXI_Bus_0_0} -quiet] -quiet
 
-# XDC: bd/design_1/design_1_ooc.xdc
+# IP: bd/design_1/ip/design_1_TO_FMC_0_0/design_1_TO_FMC_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_TO_FMC_0_0 || ORIG_REF_NAME==design_1_TO_FMC_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_Verilog_Controller_0_0/design_1_Verilog_Controller_0_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_Verilog_Controller_0_0 || ORIG_REF_NAME==design_1_Verilog_Controller_0_0} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_interconnect_1_imp_xbar_1/design_1_axi_interconnect_1_imp_xbar_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_interconnect_1_imp_xbar_1 || ORIG_REF_NAME==design_1_axi_interconnect_1_imp_xbar_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_interconnect_1_1/design_1_axi_interconnect_1_1.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_interconnect_1_1 || ORIG_REF_NAME==design_1_axi_interconnect_1_1} -quiet] -quiet
+
+# IP: bd/design_1/ip/design_1_axi_interconnect_1_imp_auto_pc_0/design_1_axi_interconnect_1_imp_auto_pc_0.xci
+set_property KEEP_HIERARCHY SOFT [get_cells -hier -filter {REF_NAME==design_1_axi_interconnect_1_imp_auto_pc_0 || ORIG_REF_NAME==design_1_axi_interconnect_1_imp_auto_pc_0} -quiet] -quiet
+
+# XDC: c:/Users/horro/Documents/research/CHIP2026_digital_testing_codes/Chip2026_Testing-main/CHIP2026_TestingSetup.gen/sources_1/bd/design_1/design_1_ooc.xdc

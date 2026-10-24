@@ -59,7 +59,7 @@ module Write_SRAM_WL(
                 end
     
                 WL_EN_OFF: begin
-                    WRITE_EN <= 1;
+                    WEN <= 1;
                     WL_EN    <= 0;
                     if (delay_cnt == N_CYCLES) begin
                         state     <= WEN_OFF;

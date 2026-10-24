@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1788330513">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg484-1" LaunchTime="1792825236">
+  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="design_1_wrapper_reports.tcl"/>
+  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="design_1_wrapper_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="design_1_wrapper_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="design_1_wrapper_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="design_1_wrapper.tcl"/>
-  <File Type="RDS-RDS" Name="design_1_wrapper.vds"/>
   <File Type="RDS-DCP" Name="design_1_wrapper.dcp"/>
-  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
+  <File Type="VDS-TIMINGSUMMARY" Name="design_1_wrapper_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="design_1_wrapper_timing_summary_synth.pb"/>
+  <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/Unbundle_AXI_Bus.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/TO_FMC.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/IMC_ScanOut.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -71,20 +88,6 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Unbundle_AXI_Bus.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/TO_FMC.v">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/bd/design_1/design_1.bd">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -92,7 +95,7 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
+    <File Path="$PGENDIR/sources_1/bd/design_1/hdl/design_1_wrapper.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -104,7 +107,7 @@
       <Option Name="TopModule" Val="design_1_wrapper"/>
     </Config>
   </FileSet>
-  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
+  <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
     <File Path="$PSRCDIR/constrs_1/new/constraints_v1.xdc">
       <FileInfo>
@@ -116,7 +119,7 @@
       <Option Name="ConstrsType" Val="XDC"/>
     </Config>
   </FileSet>
-  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
+  <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
@@ -126,9 +129,17 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2018"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_smartconnect_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_2_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_DIG_DEBUG_AXI_OUT_BUS_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_1_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_0_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_gpio_2_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_proc_sys_reset_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_Unbundle_AXI_Bus_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_TO_FMC_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="design_1_axi_interconnect_1_imp_xbar_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_Verilog_Controller_0_0"/>
 </GenRun>
