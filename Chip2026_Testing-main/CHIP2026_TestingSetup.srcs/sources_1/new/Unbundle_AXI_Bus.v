@@ -30,7 +30,6 @@ module Unbundle_AXI_Bus(
     output        WL_EN_C,
     output        SA_EN_C,
     output        BL_PCHG_C,
-    output        CLK_SA_C,
     output        WEN_C,
     output        READ_EN_C,
     output [1:0]  CS_B_C,

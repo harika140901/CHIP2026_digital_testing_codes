@@ -2,6 +2,7 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "design_1_TO_FMC_0_0",
+    "cell_name": "TO_FMC_0",
     "component_reference": "xilinx.com:module_ref:TO_FMC:1.0",
     "ip_revision": "1",
     "gen_directory": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_TO_FMC_0_0",
@@ -11,7 +12,7 @@
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],
-        "BASE_BOARD_PART": [ { "value": "em.avnet.com:zed:part0:1.4" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
         "DEVICE": [ { "value": "xc7z020" } ],
         "PACKAGE": [ { "value": "clg484" } ],
@@ -29,39 +30,33 @@
         "OUTPUTDIR": [ { "value": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_TO_FMC_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2018.3" } ],
+        "SWVERSION": [ { "value": "2025.1" } ],
         "SYNTHESISFLOW": [ { "value": "OOC_HIERARCHICAL" } ]
       }
     },
     "boundary": {
       "ports": {
-        "BANK_EN": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
-        "WL_EN": [ { "direction": "in" } ],
-        "SA_EN": [ { "direction": "in" } ],
-        "BL_PCHG": [ { "direction": "in" } ],
-        "CLK_SA": [ { "direction": "in" } ],
-        "WRITE_EN": [ { "direction": "in" } ],
-        "CS": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
-        "SCN_SEL": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
-        "CLK_A": [ { "direction": "in" } ],
-        "CLK_B": [ { "direction": "in" } ],
+        "capturestart": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "div_ratio": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "SAMPLE_EDGE_TIME": [ { "direction": "in", "size_left": "3", "size_right": "0" } ],
+        "SCN_SEL": [ { "direction": "in", "size_left": "2", "size_right": "0" } ],
+        "CS_B": [ { "direction": "in", "size_left": "1", "size_right": "0" } ],
+        "CLKA": [ { "direction": "in" } ],
+        "CLKB": [ { "direction": "in" } ],
         "IN_EN": [ { "direction": "in" } ],
         "SCN_IN": [ { "direction": "in" } ],
-        "InputEN_DAC": [ { "direction": "in" } ],
-        "CALIB_EN": [ { "direction": "in" } ],
-        "BANK_SEL": [ { "direction": "in" } ],
-        "CHG_EN": [ { "direction": "in" } ],
-        "RST_CAP_B": [ { "direction": "in" } ],
-        "VDAC_CTRL": [ { "direction": "in" } ],
-        "VTC_EN": [ { "direction": "in" } ],
-        "TDC_EN": [ { "direction": "in" } ],
-        "TDC_RST": [ { "direction": "in" } ],
-        "TDC_COMPUTE": [ { "direction": "in" } ],
+        "COMPUTE_EN": [ { "direction": "in" } ],
         "DFF_RST": [ { "direction": "in" } ],
-        "CTRL_EN": [ { "direction": "in" } ],
-        "CTRL_VB": [ { "direction": "in" } ],
-        "CTRL_VBP": [ { "direction": "in" } ],
-        "CTRL_VBN": [ { "direction": "in" } ],
+        "MUX_OUT_PAD": [ { "direction": "in" } ],
+        "CONTROL_EN": [ { "direction": "in" } ],
+        "CLK_OUT_PAD": [ { "direction": "in" } ],
+        "CLK_SA_B": [ { "direction": "in" } ],
+        "WEN": [ { "direction": "in" } ],
+        "READ_EN": [ { "direction": "in" } ],
+        "SA_EN": [ { "direction": "in" } ],
+        "BL_PCHG": [ { "direction": "in" } ],
+        "osc_EN": [ { "direction": "in" } ],
+        "WL_EN": [ { "direction": "in" } ],
         "FMC_L21": [ { "direction": "out" } ],
         "FMC_L22": [ { "direction": "out" } ],
         "FMC_R19": [ { "direction": "out" } ],
@@ -98,15 +93,15 @@
         "FMC_F19": [ { "direction": "out" } ],
         "FMC_D22": [ { "direction": "out" } ],
         "FMC_C22": [ { "direction": "out" } ],
-        "FMC_B16": [ { "direction": "out" } ],
-        "FMC_B17": [ { "direction": "out" } ],
-        "FMC_B21": [ { "direction": "out" } ],
         "FMC_B22": [ { "direction": "out" } ],
-        "FMC_C17": [ { "direction": "in" } ],
-        "FMC_C18": [ { "direction": "in" } ],
-        "DIG_AXI_OUT_0": [ { "direction": "out", "size_left": "1", "size_right": "0" } ],
+        "FMC_C17": [ { "direction": "out" } ],
+        "FMC_C18": [ { "direction": "out" } ],
+        "FMC_B16": [ { "direction": "in" } ],
+        "FMC_B17": [ { "direction": "in" } ],
+        "FMC_B21": [ { "direction": "in" } ],
+        "DIG_AXI_OUT_0": [ { "direction": "out", "size_left": "2", "size_right": "0" } ],
         "DIG_DEBUG_AXI_OUT_0": [ { "direction": "out", "size_left": "31", "size_right": "0" } ],
-        "DIG_DEBUG_AXI_OUT_1": [ { "direction": "out", "size_left": "1", "size_right": "0" } ]
+        "DIG_DEBUG_AXI_OUT_1": [ { "direction": "out" } ]
       },
       "interfaces": {
         "DFF_RST": {
@@ -114,23 +109,11 @@
           "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "POLARITY": [ { "value": "ACTIVE_LOW", "resolve_type": "generated", "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_permission": "bd_and_user", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "RST": [ { "physical_name": "DFF_RST" } ]
-          }
-        },
-        "TDC_RST": {
-          "vlnv": "xilinx.com:signal:reset:1.0",
-          "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
-          "mode": "slave",
-          "parameters": {
-            "POLARITY": [ { "value": "ACTIVE_LOW", "resolve_type": "generated", "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
-          },
-          "port_maps": {
-            "RST": [ { "physical_name": "TDC_RST" } ]
           }
         }
       }

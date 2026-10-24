@@ -97,7 +97,7 @@ module Verilog_Controller(
 
     // Renamed to avoid AXI inference issues
     input  [31:0] scan_mode_setting_in,
-    input  [1:0]  dig_out,
+    input  [2:0]  dig_out,
 
     ////////////////////////////////////////////////////////
     // DMA / Stream Signals

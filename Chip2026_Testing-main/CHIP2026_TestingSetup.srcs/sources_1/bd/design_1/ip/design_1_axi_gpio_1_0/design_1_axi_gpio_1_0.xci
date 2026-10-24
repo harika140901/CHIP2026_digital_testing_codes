@@ -2,8 +2,9 @@
   "schema": "xilinx.com:schema:json_instance:1.0",
   "ip_inst": {
     "xci_name": "design_1_axi_gpio_1_0",
+    "cell_name": "axi_gpio_1",
     "component_reference": "xilinx.com:ip:axi_gpio:2.0",
-    "ip_revision": "20",
+    "ip_revision": "37",
     "gen_directory": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0",
     "parameters": {
       "component_parameters": {
@@ -43,7 +44,7 @@
       },
       "project_parameters": {
         "ARCHITECTURE": [ { "value": "zynq" } ],
-        "BASE_BOARD_PART": [ { "value": "em.avnet.com:zed:part0:1.4" } ],
+        "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
         "DEVICE": [ { "value": "xc7z020" } ],
         "PACKAGE": [ { "value": "clg484" } ],
@@ -56,12 +57,12 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "20" } ],
+        "IPREVISION": [ { "value": "37" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../CHIP2026_TestingSetup.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_1_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
         "SHAREDDIR": [ { "value": "../../ipshared" } ],
-        "SWVERSION": [ { "value": "2018.3" } ],
+        "SWVERSION": [ { "value": "2025.1" } ],
         "SYNTHESISFLOW": [ { "value": "OUT_OF_CONTEXT" } ]
       }
     },
@@ -95,37 +96,37 @@
           "mode": "slave",
           "memory_map_ref": "S_AXI",
           "parameters": {
-            "DATA_WIDTH": [ { "value": "32", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_static_object": false } ],
-            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "ID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "ADDR_WIDTH": [ { "value": "9", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "ARUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "WUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "RUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "BUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_static_object": false } ],
-            "HAS_BURST": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_LOCK": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_PROT": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_CACHE": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_QOS": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_REGION": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_WSTRB": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_BRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "HAS_RRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "NUM_READ_OUTSTANDING": [ { "value": "2", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "NUM_WRITE_OUTSTANDING": [ { "value": "2", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "PHASE": [ { "value": "0.000", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "design_1_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_static_object": false } ],
-            "NUM_READ_THREADS": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "NUM_WRITE_THREADS": [ { "value": "1", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "RUSER_BITS_PER_BYTE": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "WUSER_BITS_PER_BYTE": [ { "value": "0", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
+            "DATA_WIDTH": [ { "value": "32", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PROTOCOL": [ { "value": "AXI4LITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ID_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ADDR_WIDTH": [ { "value": "9", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "AWUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "ARUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "BUSER_WIDTH": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "READ_WRITE_MODE": [ { "value": "READ_WRITE", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BURST": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_LOCK": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_PROT": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_CACHE": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_QOS": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_REGION": [ { "value": "0", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_WSTRB": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_BRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "HAS_RRESP": [ { "value": "1", "value_src": "constant", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_OUTSTANDING": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_OUTSTANDING": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "MAX_BURST_LENGTH": [ { "value": "1", "value_src": "ip_propagated", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "design_1_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_READ_THREADS": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "NUM_WRITE_THREADS": [ { "value": "1", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "RUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "WUSER_BITS_PER_BYTE": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "ARADDR": [ { "physical_name": "s_axi_araddr" } ],
@@ -152,12 +153,14 @@
           "abstraction_type": "xilinx.com:signal:clock_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "ASSOCIATED_BUSIF": [ { "value": "S_AXI", "value_src": "constant", "usage": "all" } ],
-            "ASSOCIATED_RESET": [ { "value": "s_axi_aresetn", "value_src": "constant", "usage": "all" } ],
-            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_static_object": false } ],
-            "PHASE": [ { "value": "0.000", "resolve_type": "generated", "format": "float", "is_static_object": false } ],
-            "CLK_DOMAIN": [ { "value": "design_1_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_static_object": false } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
+            "ASSOCIATED_BUSIF": [ { "value": "S_AXI", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "ASSOCIATED_RESET": [ { "value": "s_axi_aresetn", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "FREQ_HZ": [ { "value": "100000000", "value_src": "user_prop", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "FREQ_TOLERANCE_HZ": [ { "value": "0", "value_permission": "bd", "resolve_type": "generated", "format": "long", "is_ips_inferred": true, "is_static_object": false } ],
+            "PHASE": [ { "value": "0.0", "value_permission": "bd", "resolve_type": "generated", "format": "float", "is_ips_inferred": true, "is_static_object": false } ],
+            "CLK_DOMAIN": [ { "value": "design_1_processing_system7_0_0_FCLK_CLK0", "value_src": "default_prop", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "ASSOCIATED_PORT": [ { "value": "", "value_permission": "bd", "resolve_type": "generated", "is_ips_inferred": true, "is_static_object": false } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "CLK": [ { "physical_name": "s_axi_aclk" } ]
@@ -168,8 +171,8 @@
           "abstraction_type": "xilinx.com:signal:reset_rtl:1.0",
           "mode": "slave",
           "parameters": {
-            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "usage": "all" } ],
-            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_static_object": false } ]
+            "POLARITY": [ { "value": "ACTIVE_LOW", "value_src": "constant", "value_permission": "bd", "usage": "all" } ],
+            "INSERT_VIP": [ { "value": "0", "resolve_type": "user", "format": "long", "usage": "simulation.rtl", "is_ips_inferred": true, "is_static_object": false } ]
           },
           "port_maps": {
             "RST": [ { "physical_name": "s_axi_aresetn" } ]
@@ -180,7 +183,7 @@
           "abstraction_type": "xilinx.com:interface:gpio_rtl:1.0",
           "mode": "master",
           "parameters": {
-            "BOARD.ASSOCIATED_PARAM": [ { "value": "GPIO_BOARD_INTERFACE", "value_src": "constant", "usage": "all" } ]
+            "BOARD.ASSOCIATED_PARAM": [ { "value": "GPIO_BOARD_INTERFACE", "value_src": "constant", "value_permission": "bd", "usage": "all" } ]
           },
           "port_maps": {
             "TRI_O": [ { "physical_name": "gpio_io_o" } ]
@@ -203,16 +206,16 @@
                 "GPIO_DATA": {
                   "address_offset": "0x0",
                   "size": 2,
-                  "display_name": "Channel-1 GPIO DATA",
+                  "display_name": "Channel_1_GPIO_DATA",
                   "description": "Channel-1 AXI GPIO Data register",
                   "is_volatile": true,
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-1 GPIO DATA": {
+                    "CH1_DATA": {
                       "bit_offset": 0,
                       "bit_width": 2,
-                      "display_name": "Channel-1 GPIO DATA",
+                      "display_name": "Channel_1_GPIO_DATA",
                       "description": "AXI GPIO Data Register.\nFor each I/O bit programmed as input\n  R - Reads value on the input pin.\n  W - No effect.\nFor each I/O bit programmed as output\n  R - Reads value on GPIO_O pins\n  W - Writes value to the corresponding AXI GPIO \n      data register bit and output pin\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -222,16 +225,16 @@
                 "GPIO_TRI": {
                   "address_offset": "0x4",
                   "size": 2,
-                  "display_name": "Channel-1 GPIO TRI",
+                  "display_name": "Channel_1_GPIO_TRI",
                   "description": "Channel-1 AXI GPIO 3-State Control register",
                   "is_volatile": true,
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-1 GPIO TRI": {
+                    "CH1_TRI": {
                       "bit_offset": 0,
                       "bit_width": 2,
-                      "display_name": "Channel-1 GPIO DATA",
+                      "display_name": "Channel_1_GPIO_DATA",
                       "description": "AXI GPIO 3-State Control Register\nEach I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -241,16 +244,16 @@
                 "GPIO2_DATA": {
                   "address_offset": "0x8",
                   "size": 32,
-                  "display_name": "Channel-2 GPIO DATA",
+                  "display_name": "Channel_2_GPIO_DATA",
                   "description": "Channel-2 AXI GPIO Data register",
                   "is_volatile": true,
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-2 GPIO DATA": {
+                    "CH2_DATA": {
                       "bit_offset": 0,
                       "bit_width": 32,
-                      "display_name": "Channel-2 GPIO DATA",
+                      "display_name": "Channel_2_GPIO_DATA",
                       "description": "AXI GPIO Data Register.\nFor each I/O bit programmed as input\n  R - Reads value on the input pin.\n  W - No effect.\nFor each I/O bit programmed as output\n  R - Reads value on GPIO_O pins\n  W - Writes value to the corresponding AXI GPIO \n      data register bit and output pin\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -260,16 +263,16 @@
                 "GPIO2_TRI": {
                   "address_offset": "0xC",
                   "size": 32,
-                  "display_name": "Channel-2 GPIO TRI",
+                  "display_name": "Channel_2_GPIO_TRI",
                   "description": "Channel-2 AXI GPIO 3-State Control register",
                   "is_volatile": true,
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-2 GPIO TRI": {
+                    "CH2_TRI": {
                       "bit_offset": 0,
                       "bit_width": 32,
-                      "display_name": "Channel-2 GPIO DATA",
+                      "display_name": "Channel_2_GPIO_DATA",
                       "description": "AXI GPIO 3-State Control Register\nEach I/O pin of the AXI GPIO is individually programmable as an input or output   For each of the bits     0 - I/O pin configured as output     1 - I/O pin configured as input\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -279,16 +282,16 @@
                 "GIER": {
                   "address_offset": "0x11C",
                   "size": 32,
-                  "display_name": "Global Interrupt Enable register",
-                  "description": "Global Interrupt Enable register",
+                  "display_name": "Global_Interrupt_Enable register",
+                  "description": "Global_Interrupt_Enable register",
                   "is_volatile": true,
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Global Interrupt Enable": {
+                    "INT_EN": {
                       "bit_offset": 31,
                       "bit_width": 1,
-                      "display_name": "Global Interrupt Enable",
+                      "display_name": "Global_Interrupt_Enable",
                       "description": "Master enable for the device interrupt output\n  0 - Disabled\n  1 - Enabled\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -304,18 +307,18 @@
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-1 Interrupt Enable": {
+                    "CH1_INT_EN": {
                       "bit_offset": 0,
                       "bit_width": 1,
-                      "display_name": "Channel-1 Interrupt Enable",
+                      "display_name": "Channel_1_Interrupt_Enable",
                       "description": "Enable Channel 1 Interrupt\n  0 - Disabled (masked)\n  1 - Enabled\n",
                       "is_volatile": true,
                       "access": "read-write"
                     },
-                    "Channel-2 Interrupt Enable": {
+                    "CH2_INT_EN": {
                       "bit_offset": 1,
                       "bit_width": 1,
-                      "display_name": "Channel-2 Interrupt Enable",
+                      "display_name": "Channel_2_Interrupt_Enable",
                       "description": "Enable Channel 2 Interrupt\n  0 - Disabled (masked)\n  1 - Enabled\n",
                       "is_volatile": true,
                       "access": "read-write"
@@ -331,18 +334,18 @@
                   "access": "read-write",
                   "reset_value": "0x0",
                   "fields": {
-                    "Channel-1 Interrupt Status": {
+                    "CH1_INT_S": {
                       "bit_offset": 0,
                       "bit_width": 1,
-                      "display_name": "Channel-1 Interrupt Status",
+                      "display_name": "Channel_1_Interrupt_Status",
                       "description": "Channel 1 Interrupt Status\n  0 - No Channel 1 input interrupt\n  1 - Channel 1 input interrupt\n",
                       "is_volatile": true,
                       "access": "read-write"
                     },
-                    "Channel-2 Interrupt Status": {
+                    "CH2_INT_S": {
                       "bit_offset": 1,
                       "bit_width": 1,
-                      "display_name": "Channel-2 Interrupt Status",
+                      "display_name": "Channel_2_Interrupt_Status",
                       "description": "Channel 2 Interrupt Status\n  0 - No Channel 2 input interrupt\n  1 - Channel 2 input interrupt\n",
                       "is_volatile": true,
                       "access": "read-write"
