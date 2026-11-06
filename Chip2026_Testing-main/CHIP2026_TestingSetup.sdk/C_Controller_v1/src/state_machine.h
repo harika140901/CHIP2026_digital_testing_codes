@@ -4,11 +4,10 @@
 // custom header files
 #include "utils.h"
 #include "echo.h"
- 
+
 #include "xgpio.h"
 #include "xaxidma.h"
 #include "xparameters.h"
-
 
 /********** Signal Index for Dig AXI IN Bus 0 **********/
 #define BANK_EN_0  	0
@@ -43,6 +42,7 @@
 #define IN_EN		29
 #define SCN_IN		30
 #define CTRL_VB		31
+
 /********** Signal Index for Dig AXI IN Bus 1 **********/
 #define CTRL_VBP	32
 #define CTRL_VBN	33
@@ -51,7 +51,7 @@
 #define SCN_OUT 0
 #define IMC_DONE 1
 
-//Define Scan Chains
+// Define Scan Chains
 #define TDC_OUT_SC_LM       0
 #define TDC_OUT_SC_RM       1
 #define CL_EN_SC_LM         2
@@ -65,6 +65,24 @@
 
 #define MAX_SCAN_LEN 1164
 #define NUM_WL 1164
+
+// Scan chain validation + DMA length helpers
+static inline int is_valid_scan_id(u8 scan_id) {
+    return (scan_id <= XIN_SC_UNITV);
+}
+
+static inline u16 get_scan_len_for_id(u8 scan_id) {
+    if (!is_valid_scan_id(scan_id)) {
+        return 0;
+    }
+    // this is valid for the controller-side default table
+    // if you later want a different table, set this here
+    return 1152;
+}
+
+static inline u32 scan_dma_len_bytes(u16 scan_len) {
+    return (((u32)scan_len + 31u) / 32u) * 4u;
+}
 
 //Define signal index for MODE_SETIING_AXI
 #define VERILOG_C_SCAN 	0
@@ -102,34 +120,31 @@
 
 //Create a structure to store the state machine data.
 struct SM_DATA{
-	u8 signal_values[DIG_IN_SIG_LEN]; //Signal values to be set for DIG_AXI
-	u8 default_signal_values[DIG_IN_SIG_LEN]; //Default signal values for startup DIG_AXI
+    u8 signal_values[DIG_IN_SIG_LEN];
+    u8 default_signal_values[DIG_IN_SIG_LEN];
 
-	u8 mode_signal_values[32]; //Signal Values to be set for MODE_AXI
-	u8 mode_default_signal_values[32]; //Default signal values for startup MODE_AXI
+    u8 mode_signal_values[32];
+    u8 mode_default_signal_values[32];
 
-	// to guarantee 32-byte cache-line alignment
-	u8 dma_scanout_buffer[148] __attribute__((aligned(32))); // floor((MAX_SCAN_LEN+31)/32)*4 Data is saved into bits
-	u8 dma_scan_in_buffer[148] __attribute__((aligned(32)));
-	// 360 signed 10-bit IMC outputs = 3600 bits = 450 bytes.
-	// Padded to 3616 bits (452 bytes) for 32-bit DMA transfers.
-	u8 dma_imcout_buffer[452]  __attribute__((aligned(32)));
-	int imc_out_mac[360];
-	u8 sram_read_buffer [36*1164]; //Max scanned out data will be 36 bytes * Num_WL
-	u8 sram_write_buffer[36*1152]; //Max write data for IMC will be 36 bytes * Num_WL (excluding CALIB-WL)
-	u16 calib_wl[12]; // 3WLs dedicated per Bank for VTC & OSC Calibration
-	u16 scan_len[10];
+    u8 dma_scanout_buffer[148] __attribute__((aligned(32)));
+    u8 dma_scan_in_buffer[148] __attribute__((aligned(32)));
+    u8 dma_imcout_buffer[452] __attribute__((aligned(32)));
 
-	XGpio AXI_INPUT_BUS_0;
-	XGpio AXI_INPUT_BUS_1;
-	XGpio AXI_OUTPUT_BUS;
-	XGpio AXI_DEBUG_OUTPUT_BUS_0;
-	XGpio AXI_DEBUG_OUTPUT_BUS_1;
-	XGpio AXI_SCAN_MODE_SETTINGS_BUS;
-	XAxiDma AxiDma; //DMA for verilog_scan_in
+    int imc_out_mac[360];
+    u8 sram_read_buffer [36*1164];
+    u8 sram_write_buffer[36*1152];
+    u16 calib_wl[12];
+    u16 scan_len[10];
 
-	//Static array for correction slope and bias per (CiM Bank)->(Compute-Line)
-	float Correction_Data[2][4][90];
+    XGpio AXI_INPUT_BUS_0;
+    XGpio AXI_INPUT_BUS_1;
+    XGpio AXI_OUTPUT_BUS;
+    XGpio AXI_DEBUG_OUTPUT_BUS_0;
+    XGpio AXI_DEBUG_OUTPUT_BUS_1;
+    XGpio AXI_SCAN_MODE_SETTINGS_BUS;
+    XAxiDma AxiDma;
+
+    float Correction_Data[2][4][90];
 };
 
 extern struct SM_DATA GLOBAL_SM_DATA;
